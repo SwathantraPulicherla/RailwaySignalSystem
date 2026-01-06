@@ -1,0 +1,18 @@
+# Build artifacts
+/tests/build/
+/build/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+
+# Coverage artifacts
+*.gcda
+*.gcno
+*.gcov
+/tests/coverage_report/
+
+# Ninja/CTest transient files
+**/.ninja_deps
+**/.ninja_log
+**/Testing/

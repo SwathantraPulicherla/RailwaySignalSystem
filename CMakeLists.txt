@@ -4,6 +4,17 @@ project(railway_system)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# Optional coverage instrumentation (requires GCC/Clang + gcov-compatible tooling).
+option(RAILWAY_ENABLE_COVERAGE "Enable coverage instrumentation" OFF)
+if(RAILWAY_ENABLE_COVERAGE)
+  if(MSVC)
+    message(WARNING "RAILWAY_ENABLE_COVERAGE is ON but MSVC is in use; gcov-based coverage will not work.")
+  else()
+    add_compile_options(--coverage)
+    add_link_options(--coverage)
+  endif()
+endif()
+
 # Enable CTest (so `ctest` discovers tests added via add_test())
 include(CTest)
 enable_testing()
