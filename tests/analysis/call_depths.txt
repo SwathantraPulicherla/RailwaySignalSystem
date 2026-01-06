@@ -1,0 +1,16 @@
+REPO SCAN - CALL DEPTHS
+==================================================
+
+Depth 2: void BlockController::init (from src\app\BlockController.cpp)
+Depth 2: void BlockController::tick (from src\app\BlockController.cpp)
+Depth 1: void SignalHead::init (from src\drivers\SignalHead.cpp)
+Depth 1: void SignalHead::writeLamp (from src\drivers\SignalHead.cpp)
+Depth 1: void SignalHead::setAspect (from src\drivers\SignalHead.cpp)
+Depth 1: void TrackCircuitInput::init (from src\drivers\TrackCircuitInput.cpp)
+Depth 1: void TrackCircuitInput::update (from src\drivers\TrackCircuitInput.cpp)
+Depth 1: void ArduinoGpio::configure (from src\hal\ArduinoGpio.cpp)
+Depth 1: void ArduinoGpio::write (from src\hal\ArduinoGpio.cpp)
+Depth 1: void MockGpio::configure (from src\hal\MockGpio.cpp)
+Depth 1: void MockGpio::write (from src\hal\MockGpio.cpp)
+Depth 1: void MockGpio::setInputLevel (from src\hal\MockGpio.cpp)
+Depth 1: evaluate (from src\logic\Interlocking.cpp)

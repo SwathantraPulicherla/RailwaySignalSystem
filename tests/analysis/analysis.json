@@ -1,0 +1,459 @@
+{
+  "file_index": {
+    "include\\railway\\Types.h": {
+      "path": "include\\railway\\Types.h",
+      "language": "cpp",
+      "includes": [
+        "cstdint"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\app\\BlockController.h": {
+      "path": "include\\railway\\app\\BlockController.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h",
+        "railway/drivers/SignalHead.h",
+        "railway/drivers/TrackCircuitInput.h",
+        "railway/hal/IClock.h",
+        "railway/logic/Interlocking.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\drivers\\SignalHead.h": {
+      "path": "include\\railway\\drivers\\SignalHead.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h",
+        "railway/hal/IGpio.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\drivers\\TrackCircuitInput.h": {
+      "path": "include\\railway\\drivers\\TrackCircuitInput.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h",
+        "railway/hal/IGpio.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\hal\\ArduinoGpio.h": {
+      "path": "include\\railway\\hal\\ArduinoGpio.h",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/IGpio.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\hal\\IClock.h": {
+      "path": "include\\railway\\hal\\IClock.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\hal\\IGpio.h": {
+      "path": "include\\railway\\hal\\IGpio.h",
+      "language": "cpp",
+      "includes": [
+        "cstdint"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\hal\\MockGpio.h": {
+      "path": "include\\railway\\hal\\MockGpio.h",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/IGpio.h",
+        "array",
+        "cstddef"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\hal\\PlatformHal.h": {
+      "path": "include\\railway\\hal\\PlatformHal.h",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/IClock.h",
+        "railway/hal/IGpio.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\logic\\Interlocking.h": {
+      "path": "include\\railway\\logic\\Interlocking.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h",
+        "railway/drivers/SignalHead.h"
+      ],
+      "is_header": true
+    },
+    "src\\app\\BlockController.cpp": {
+      "path": "src\\app\\BlockController.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/app/BlockController.h"
+      ],
+      "is_header": false
+    },
+    "src\\drivers\\SignalHead.cpp": {
+      "path": "src\\drivers\\SignalHead.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/drivers/SignalHead.h"
+      ],
+      "is_header": false
+    },
+    "src\\drivers\\TrackCircuitInput.cpp": {
+      "path": "src\\drivers\\TrackCircuitInput.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/drivers/TrackCircuitInput.h"
+      ],
+      "is_header": false
+    },
+    "src\\hal\\ArduinoGpio.cpp": {
+      "path": "src\\hal\\ArduinoGpio.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/ArduinoGpio.h",
+        "Arduino.h"
+      ],
+      "is_header": false
+    },
+    "src\\hal\\MockGpio.cpp": {
+      "path": "src\\hal\\MockGpio.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/MockGpio.h"
+      ],
+      "is_header": false
+    },
+    "src\\hal\\PlatformHal_host.cpp": {
+      "path": "src\\hal\\PlatformHal_host.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/PlatformHal.h"
+      ],
+      "is_header": false
+    },
+    "src\\hal\\SteadyClock.cpp": {
+      "path": "src\\hal\\SteadyClock.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/hal/IClock.h",
+        "chrono"
+      ],
+      "is_header": false
+    },
+    "src\\logic\\Interlocking.cpp": {
+      "path": "src\\logic\\Interlocking.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/logic/Interlocking.h"
+      ],
+      "is_header": false
+    }
+  },
+  "function_index": {
+    "void BlockController::init": {
+      "name": "void BlockController::init",
+      "file": "src\\app\\BlockController.cpp",
+      "language": "cpp",
+      "calls": [
+        "setAspect",
+        "init",
+        "evaluate",
+        "nowMs"
+      ],
+      "body": "\n    ownTrack_.init();\n    downstreamTrack_.init();\n    signal_.init();\n\n    lastTickMs_ = clock_.nowMs();\n    last_ = railway::logic::evaluate(railway::logic::Inputs{});\n    signal_.setAspect(last_.aspect);\n",
+      "touches_hardware": false
+    },
+    "void BlockController::tick": {
+      "name": "void BlockController::tick",
+      "file": "src\\app\\BlockController.cpp",
+      "language": "cpp",
+      "calls": [
+        "setAspect",
+        "evaluate",
+        "update",
+        "isHealthy",
+        "isOccupied",
+        "nowMs"
+      ],
+      "body": "\n    const auto now = clock_.nowMs();\n\n    const bool fresh = (lastTickMs_ == 0) ? true : ((now - lastTickMs_) <= cfg_.maxLoopGapMs);\n    lastTickMs_ = now;\n\n    ownTrack_.update(now);\n    downstreamTrack_.update(now);\n\n    railway::logic::Inputs in{};\n    in.controllerFresh = fresh;\n    in.ownTrackCircuitHealthy = ownTrack_.isHealthy();\n    in.ownBlockOccupied = ownTrack_.isOccupied();\n    in.downstreamBlockOccupied = downstreamTrack_.isOccupied();\n\n    last_ = railway::logic::evaluate(in);\n    signal_.setAspect(last_.aspect);\n",
+      "touches_hardware": false
+    },
+    "void SignalHead::init": {
+      "name": "void SignalHead::init",
+      "file": "src\\drivers\\SignalHead.cpp",
+      "language": "cpp",
+      "calls": [
+        "setAspect",
+        "configure"
+      ],
+      "body": "\n    gpio_.configure(cfg_.redPin, railway::hal::PinMode::OutputPushPull);\n    gpio_.configure(cfg_.yellowPin, railway::hal::PinMode::OutputPushPull);\n    gpio_.configure(cfg_.greenPin, railway::hal::PinMode::OutputPushPull);\n\n    setAspect(Aspect::Stop);\n",
+      "touches_hardware": false
+    },
+    "void SignalHead::writeLamp": {
+      "name": "void SignalHead::writeLamp",
+      "file": "src\\drivers\\SignalHead.cpp",
+      "language": "cpp",
+      "calls": [
+        "write"
+      ],
+      "body": "\n    const bool levelHigh = cfg_.activeHigh ? on : !on;\n    gpio_.write(pin, levelHigh ? railway::hal::PinLevel::High : railway::hal::PinLevel::Low);\n",
+      "touches_hardware": false
+    },
+    "void SignalHead::setAspect": {
+      "name": "void SignalHead::setAspect",
+      "file": "src\\drivers\\SignalHead.cpp",
+      "language": "cpp",
+      "calls": [
+        "simultaneously",
+        "writeLamp"
+      ],
+      "body": "\n    // Fail-safe: any unknown value becomes STOP.\n    if (aspect != Aspect::Stop && aspect != Aspect::Caution && aspect != Aspect::Clear) {\n        aspect = Aspect::Stop;\n    }\n\n    aspect_ = aspect;\n\n    // Never energize multiple lamps simultaneously (typical signalling requirement).\n    writeLamp(cfg_.redPin, aspect_ == Aspect::Stop);\n    writeLamp(cfg_.yellowPin, aspect_ == Aspect::Caution);\n    writeLamp(cfg_.greenPin, aspect_ == Aspect::Clear);\n",
+      "touches_hardware": false
+    },
+    "void TrackCircuitInput::init": {
+      "name": "void TrackCircuitInput::init",
+      "file": "src\\drivers\\TrackCircuitInput.cpp",
+      "language": "cpp",
+      "calls": [
+        "readRawClear",
+        "configure"
+      ],
+      "body": "\n    gpio_.configure(cfg_.pin, railway::hal::PinMode::InputPullup);\n    rawClear_ = readRawClear();\n    stableClear_ = rawClear_;\n    lastRawChangeMs_ = 0;\n    lastUpdateMs_ = 0;\n    healthy_ = true;\n    stuckLowSinceMs_ = 0;\n",
+      "touches_hardware": false
+    },
+    "void TrackCircuitInput::update": {
+      "name": "void TrackCircuitInput::update",
+      "file": "src\\drivers\\TrackCircuitInput.cpp",
+      "language": "cpp",
+      "calls": [
+        "readRawClear"
+      ],
+      "body": "\n    lastUpdateMs_ = nowMs;\n\n    const bool newRawClear = readRawClear();\n    if (newRawClear != rawClear_) {\n        rawClear_ = newRawClear;\n        lastRawChangeMs_ = nowMs;\n    }\n\n    // Debounce: accept new state only after it remains stable long enough.\n    if ((nowMs - lastRawChangeMs_) >= cfg_.debounceMs) {\n        stableClear_ = rawClear_;\n    }\n\n    // Fault detection: track circuit stuck \"not clear\" (de-energized) beyond threshold.\n    if (!stableClear_) {\n        if (stuckLowSinceMs_ == 0) {\n            stuckLowSinceMs_ = nowMs;\n        }\n        if ((nowMs - stuckLowSinceMs_) >= cfg_.stuckLowFaultMs) {\n            healthy_ = false;\n        }\n    } else {\n        stuckLowSinceMs_ = 0;\n        healthy_ = true;\n    }\n",
+      "touches_hardware": false
+    },
+    "void ArduinoGpio::configure": {
+      "name": "void ArduinoGpio::configure",
+      "file": "src\\hal\\ArduinoGpio.cpp",
+      "language": "cpp",
+      "calls": [
+        "pinMode",
+        "else"
+      ],
+      "body": "\n#ifdef ARDUINO\n    switch (mode) {\n        case PinMode::Input:\n            ::pinMode(static_cast<int>(pin), INPUT);\n            break;\n        case PinMode::InputPullup:\n            ::pinMode(static_cast<int>(pin), INPUT_PULLUP);\n            break;\n        case PinMode::OutputPushPull:\n            ::pinMode(static_cast<int>(pin), OUTPUT);\n            break;\n    }\n#else\n    (void)pin;\n    (void)mode;\n#endif\n",
+      "touches_hardware": false
+    },
+    "void ArduinoGpio::write": {
+      "name": "void ArduinoGpio::write",
+      "file": "src\\hal\\ArduinoGpio.cpp",
+      "language": "cpp",
+      "calls": [
+        "else",
+        "digitalWrite"
+      ],
+      "body": "\n#ifdef ARDUINO\n    ::digitalWrite(static_cast<int>(pin), (level == PinLevel::High) ? HIGH : LOW);\n#else\n    (void)pin;\n    (void)level;\n#endif\n",
+      "touches_hardware": false
+    },
+    "void MockGpio::configure": {
+      "name": "void MockGpio::configure",
+      "file": "src\\hal\\MockGpio.cpp",
+      "language": "cpp",
+      "calls": [],
+      "body": "\n    if (pin < kMaxPins) {\n        modes_[pin] = mode;\n    }\n",
+      "touches_hardware": false
+    },
+    "void MockGpio::write": {
+      "name": "void MockGpio::write",
+      "file": "src\\hal\\MockGpio.cpp",
+      "language": "cpp",
+      "calls": [],
+      "body": "\n    if (pin < kMaxPins) {\n        levels_[pin] = level;\n    }\n",
+      "touches_hardware": false
+    },
+    "void MockGpio::setInputLevel": {
+      "name": "void MockGpio::setInputLevel",
+      "file": "src\\hal\\MockGpio.cpp",
+      "language": "cpp",
+      "calls": [],
+      "body": "\n    if (pin < kMaxPins) {\n        levels_[pin] = level;\n    }\n",
+      "touches_hardware": false
+    },
+    "evaluate": {
+      "name": "evaluate",
+      "file": "src\\logic\\Interlocking.cpp",
+      "language": "cpp",
+      "calls": [],
+      "body": "\n    Decision out{};\n\n    // Fail-safe first.\n    if (!in.controllerFresh) {\n        out.aspect = railway::drivers::Aspect::Stop;\n        out.reason = StopReason::ControllerStale;\n        out.health = railway::Health::Fault;\n        return out;\n    }\n\n    if (!in.ownTrackCircuitHealthy) {\n        out.aspect = railway::drivers::Aspect::Stop;\n        out.reason = StopReason::TrackCircuitFault;\n        out.health = railway::Health::Degraded;\n        return out;\n    }\n\n    if (in.ownBlockOccupied) {\n        out.aspect = railway::drivers::Aspect::Stop;\n        out.reason = StopReason::OwnBlockOccupied;\n        out.health = railway::Health::Ok;\n        return out;\n    }\n\n    // Approach control / simple two-block logic.\n    if (in.downstreamBlockOccupied) {\n        out.aspect = railway::drivers::Aspect::Caution;\n        out.reason = StopReason::DownstreamStop;\n        out.health = railway::Health::Ok;\n        return out;\n    }\n\n    out.aspect = railway::drivers::Aspect::Clear;\n    out.reason = StopReason::None;\n    out.health = railway::Health::Ok;\n    return out;\n",
+      "touches_hardware": false
+    }
+  },
+  "class_roles": {
+    "ArduinoGpio": "HARDWARE",
+    "MockGpio": "HARDWARE",
+    "BlockController": "MIXED",
+    "SignalHead": "MIXED",
+    "TrackCircuitInput": "MIXED"
+  },
+  "call_graph": {
+    "void BlockController::init": [
+      "setAspect",
+      "init",
+      "evaluate",
+      "nowMs"
+    ],
+    "void BlockController::tick": [
+      "setAspect",
+      "evaluate",
+      "update",
+      "isHealthy",
+      "isOccupied",
+      "nowMs"
+    ],
+    "void SignalHead::init": [
+      "setAspect",
+      "configure"
+    ],
+    "void SignalHead::writeLamp": [
+      "write"
+    ],
+    "void SignalHead::setAspect": [
+      "simultaneously",
+      "writeLamp"
+    ],
+    "void TrackCircuitInput::init": [
+      "readRawClear",
+      "configure"
+    ],
+    "void TrackCircuitInput::update": [
+      "readRawClear"
+    ],
+    "void ArduinoGpio::configure": [
+      "pinMode",
+      "else"
+    ],
+    "void ArduinoGpio::write": [
+      "else",
+      "digitalWrite"
+    ],
+    "void MockGpio::configure": [],
+    "void MockGpio::write": [],
+    "void MockGpio::setInputLevel": [],
+    "evaluate": []
+  },
+  "hardware_flags": {
+    "void BlockController::init": false,
+    "void BlockController::tick": false,
+    "void SignalHead::init": true,
+    "void SignalHead::writeLamp": true,
+    "void SignalHead::setAspect": false,
+    "void TrackCircuitInput::init": true,
+    "void TrackCircuitInput::update": false,
+    "void ArduinoGpio::configure": true,
+    "void ArduinoGpio::write": true,
+    "void MockGpio::configure": true,
+    "void MockGpio::write": true,
+    "void MockGpio::setInputLevel": true,
+    "evaluate": false
+  },
+  "call_depths": {
+    "void BlockController::init": 2,
+    "void BlockController::tick": 2,
+    "void SignalHead::init": 1,
+    "void SignalHead::writeLamp": 1,
+    "void SignalHead::setAspect": 1,
+    "void TrackCircuitInput::init": 1,
+    "void TrackCircuitInput::update": 1,
+    "void ArduinoGpio::configure": 1,
+    "void ArduinoGpio::write": 1,
+    "void MockGpio::configure": 1,
+    "void MockGpio::write": 1,
+    "void MockGpio::setInputLevel": 1,
+    "evaluate": 1
+  },
+  "file_summaries": {
+    "src\\app\\BlockController.cpp": {
+      "testable": true,
+      "functions": [
+        "void BlockController::init",
+        "void BlockController::tick"
+      ],
+      "max_call_depth": 2,
+      "hardware_free": true,
+      "dependencies": [
+        "src\\logic\\Interlocking.cpp"
+      ]
+    },
+    "src\\drivers\\SignalHead.cpp": {
+      "testable": true,
+      "functions": [
+        "void SignalHead::init",
+        "void SignalHead::writeLamp",
+        "void SignalHead::setAspect"
+      ],
+      "max_call_depth": 1,
+      "hardware_free": false,
+      "dependencies": []
+    },
+    "src\\drivers\\TrackCircuitInput.cpp": {
+      "testable": true,
+      "functions": [
+        "void TrackCircuitInput::init",
+        "void TrackCircuitInput::update"
+      ],
+      "max_call_depth": 1,
+      "hardware_free": false,
+      "dependencies": []
+    },
+    "src\\hal\\ArduinoGpio.cpp": {
+      "testable": true,
+      "functions": [
+        "void ArduinoGpio::configure",
+        "void ArduinoGpio::write"
+      ],
+      "max_call_depth": 1,
+      "hardware_free": false,
+      "dependencies": []
+    },
+    "src\\hal\\MockGpio.cpp": {
+      "testable": true,
+      "functions": [
+        "void MockGpio::configure",
+        "void MockGpio::write",
+        "void MockGpio::setInputLevel"
+      ],
+      "max_call_depth": 1,
+      "hardware_free": false,
+      "dependencies": []
+    },
+    "src\\hal\\PlatformHal_host.cpp": {
+      "testable": true,
+      "functions": [],
+      "max_call_depth": 0,
+      "hardware_free": true,
+      "dependencies": []
+    },
+    "src\\hal\\SteadyClock.cpp": {
+      "testable": true,
+      "functions": [],
+      "max_call_depth": 0,
+      "hardware_free": true,
+      "dependencies": []
+    },
+    "src\\logic\\Interlocking.cpp": {
+      "testable": true,
+      "functions": [
+        "evaluate"
+      ],
+      "max_call_depth": 1,
+      "hardware_free": true,
+      "dependencies": []
+    }
+  }
+}

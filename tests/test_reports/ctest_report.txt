@@ -1,0 +1,16 @@
+============================================================
+CTEST REPORT
+============================================================
+
+Return code: 0
+
+STATUS: COMPLETED
+
+--- STDOUT/STDERR ---
+Test project C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build
+    Start 1: test_Interlocking
+1/1 Test #1: test_Interlocking ................   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.08 sec

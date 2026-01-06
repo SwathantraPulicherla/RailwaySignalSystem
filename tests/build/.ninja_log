@@ -1,0 +1,13 @@
+# ninja log v7
+95	192	7894074503434070	src/CMakeFiles/railway_logic.dir/logic/Interlocking.cpp.obj	391a31b25ae3b675
+194	313	7894074504416223	src/librailway_logic.a	86e3ab3f8382c3ff
+87	1768	7894074503338570	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	eed78cb69753f715
+113	1960	7894074503611035	tests/CMakeFiles/railway_tests.dir/test_interlocking.cpp.obj	abf830aa9040ccc9
+104	2119	7894074503514107	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	ce571cd687d64be
+78	3437	7894074503252464	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj	68e0510e6ff7f1e6
+67	7441	7894074503106875	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	8eb0f46c57ea66ff
+7443	7589	7894074576903348	lib/libgtest.a	438185d0fab38cdb
+7595	7706	7894074578385526	lib/libgtest_main.a	ffd5873d67b02e91
+7589	7715	7894074578317654	lib/libgmock.a	e7b8a8b0464743db
+7715	7811	7894074579557763	lib/libgmock_main.a	127c773f85eac0b6
+7706	7941	7894074579399010	tests/railway_tests.exe	1401aff7c70e0459

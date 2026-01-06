@@ -1,0 +1,36 @@
+Start testing: Jan 06 19:17 India Standard Time
+----------------------------------------------------------
+1/1 Testing: test_Interlocking
+1/1 Test: test_Interlocking
+Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/railway_tests.exe"
+Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build
+"test_Interlocking" start time: Jan 06 19:17 India Standard Time
+Output:
+----------------------------------------------------------
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from InterlockingTest
+[ RUN      ] InterlockingTest.ControllerStaleReturnsFaultStop
+[       OK ] InterlockingTest.ControllerStaleReturnsFaultStop (0 ms)
+[ RUN      ] InterlockingTest.OwnTrackCircuitFaultReturnsDegradedStop
+[       OK ] InterlockingTest.OwnTrackCircuitFaultReturnsDegradedStop (0 ms)
+[ RUN      ] InterlockingTest.OwnBlockOccupiedReturnsOkStop
+[       OK ] InterlockingTest.OwnBlockOccupiedReturnsOkStop (0 ms)
+[ RUN      ] InterlockingTest.DownstreamBlockOccupiedReturnsOkCaution
+[       OK ] InterlockingTest.DownstreamBlockOccupiedReturnsOkCaution (0 ms)
+[ RUN      ] InterlockingTest.AllClearReturnsOkClear
+[       OK ] InterlockingTest.AllClearReturnsOkClear (0 ms)
+[----------] 5 tests from InterlockingTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_Interlocking" end time: Jan 06 19:17 India Standard Time
+"test_Interlocking" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 06 19:17 India Standard Time
