@@ -17,10 +17,6 @@ PASSED: InterlockingTest.AllClearReturnsOkClear
 CTEST SUMMARY
 ============================================================
 
-============================================================
-CTEST REPORT
-============================================================
-
 Return code: 0
 
 STATUS: COMPLETED
@@ -28,8 +24,8 @@ STATUS: COMPLETED
 --- STDOUT/STDERR ---
 Test project C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build
     Start 1: test_Interlocking
-1/1 Test #1: test_Interlocking ................   Passed    0.03 sec
+1/1 Test #1: test_Interlocking ................   Passed    0.01 sec
 
 100% tests passed, 0 tests failed out of 1
 
-Total Test time (real) =   0.08 sec
+Total Test time (real) =   0.02 sec

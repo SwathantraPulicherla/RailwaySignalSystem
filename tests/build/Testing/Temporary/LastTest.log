@@ -1,10 +1,10 @@
-Start testing: Jan 06 19:17 India Standard Time
+Start testing: Jan 06 19:32 India Standard Time
 ----------------------------------------------------------
 1/1 Testing: test_Interlocking
 1/1 Test: test_Interlocking
 Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/railway_tests.exe"
 Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build
-"test_Interlocking" start time: Jan 06 19:17 India Standard Time
+"test_Interlocking" start time: Jan 06 19:32 India Standard Time
 Output:
 ----------------------------------------------------------
 [==========] Running 5 tests from 1 test suite.
@@ -26,11 +26,11 @@ Output:
 [==========] 5 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 5 tests.
 <end of output>
-Test time =   0.03 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_Interlocking" end time: Jan 06 19:17 India Standard Time
+"test_Interlocking" end time: Jan 06 19:32 India Standard Time
 "test_Interlocking" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 06 19:17 India Standard Time
+End testing: Jan 06 19:32 India Standard Time
