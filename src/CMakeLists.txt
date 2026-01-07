@@ -1,5 +1,7 @@
 add_library(railway_logic
     logic/Interlocking.cpp
+    logic/ControllerHelpers.cpp
+    logic/ControllerLogic.cpp
 )
 
 target_include_directories(railway_logic PUBLIC

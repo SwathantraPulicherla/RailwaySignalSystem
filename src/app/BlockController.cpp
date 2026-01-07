@@ -1,4 +1,5 @@
 #include "railway/app/BlockController.h"
+#include "railway/logic/ControllerLogic.h"
 
 namespace railway::app {
 
@@ -26,19 +27,12 @@ void BlockController::init() {
 void BlockController::tick() {
     const auto now = clock_.nowMs();
 
-    const bool fresh = (lastTickMs_ == 0) ? true : ((now - lastTickMs_) <= cfg_.maxLoopGapMs);
-    lastTickMs_ = now;
-
     ownTrack_.update(now);
     downstreamTrack_.update(now);
 
-    railway::logic::Inputs in{};
-    in.controllerFresh = fresh;
-    in.ownTrackCircuitHealthy = ownTrack_.isHealthy();
-    in.ownBlockOccupied = ownTrack_.isOccupied();
-    in.downstreamBlockOccupied = downstreamTrack_.isOccupied();
-
-    last_ = railway::logic::evaluate(in);
+    last_ = railway::logic::evaluateControllerLogic(lastTickMs_, now, cfg_.maxLoopGapMs,
+                                                     ownTrack_.isHealthy(), ownTrack_.isOccupied(), downstreamTrack_.isOccupied());
+    lastTickMs_ = now;
     signal_.setAspect(last_.aspect);
 }
 

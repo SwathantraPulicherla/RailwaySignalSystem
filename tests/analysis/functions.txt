@@ -4,7 +4,7 @@ REPO SCAN - FUNCTION INDEX
 Function: void BlockController::init
 File: src\app\BlockController.cpp
 Language: cpp
-Calls: setAspect, init, evaluate, nowMs
+Calls: evaluate, init, setAspect, nowMs
 Hardware Touching: False
 Call Depth: 2
 ------------------------------
@@ -12,15 +12,15 @@ Call Depth: 2
 Function: void BlockController::tick
 File: src\app\BlockController.cpp
 Language: cpp
-Calls: setAspect, evaluate, update, isHealthy, isOccupied, nowMs
+Calls: setAspect, isOccupied, evaluateControllerLogic, isHealthy, nowMs, update
 Hardware Touching: False
-Call Depth: 2
+Call Depth: 3
 ------------------------------
 
 Function: void SignalHead::init
 File: src\drivers\SignalHead.cpp
 Language: cpp
-Calls: setAspect, configure
+Calls: configure, setAspect
 Hardware Touching: True
 Call Depth: 1
 ------------------------------
@@ -36,7 +36,7 @@ Call Depth: 1
 Function: void SignalHead::setAspect
 File: src\drivers\SignalHead.cpp
 Language: cpp
-Calls: simultaneously, writeLamp
+Calls: writeLamp, simultaneously
 Hardware Touching: False
 Call Depth: 1
 ------------------------------
@@ -44,7 +44,7 @@ Call Depth: 1
 Function: void TrackCircuitInput::init
 File: src\drivers\TrackCircuitInput.cpp
 Language: cpp
-Calls: readRawClear, configure
+Calls: configure, readRawClear
 Hardware Touching: True
 Call Depth: 1
 ------------------------------
@@ -68,7 +68,7 @@ Call Depth: 1
 Function: void ArduinoGpio::write
 File: src\hal\ArduinoGpio.cpp
 Language: cpp
-Calls: else, digitalWrite
+Calls: digitalWrite, else
 Hardware Touching: True
 Call Depth: 1
 ------------------------------
@@ -95,6 +95,22 @@ Language: cpp
 Calls: 
 Hardware Touching: True
 Call Depth: 1
+------------------------------
+
+Function: computeControllerFresh
+File: src\logic\ControllerHelpers.cpp
+Language: cpp
+Calls: 
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: evaluateControllerLogic
+File: src\logic\ControllerLogic.cpp
+Language: cpp
+Calls: evaluate, computeControllerFresh
+Hardware Touching: False
+Call Depth: 2
 ------------------------------
 
 Function: evaluate

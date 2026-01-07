@@ -81,6 +81,23 @@
       ],
       "is_header": true
     },
+    "include\\railway\\logic\\ControllerHelpers.h": {
+      "path": "include\\railway\\logic\\ControllerHelpers.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h"
+      ],
+      "is_header": true
+    },
+    "include\\railway\\logic\\ControllerLogic.h": {
+      "path": "include\\railway\\logic\\ControllerLogic.h",
+      "language": "cpp",
+      "includes": [
+        "railway/Types.h",
+        "railway/logic/Interlocking.h"
+      ],
+      "is_header": true
+    },
     "include\\railway\\logic\\Interlocking.h": {
       "path": "include\\railway\\logic\\Interlocking.h",
       "language": "cpp",
@@ -94,7 +111,8 @@
       "path": "src\\app\\BlockController.cpp",
       "language": "cpp",
       "includes": [
-        "railway/app/BlockController.h"
+        "railway/app/BlockController.h",
+        "railway/logic/ControllerLogic.h"
       ],
       "is_header": false
     },
@@ -148,6 +166,23 @@
       ],
       "is_header": false
     },
+    "src\\logic\\ControllerHelpers.cpp": {
+      "path": "src\\logic\\ControllerHelpers.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/logic/ControllerHelpers.h"
+      ],
+      "is_header": false
+    },
+    "src\\logic\\ControllerLogic.cpp": {
+      "path": "src\\logic\\ControllerLogic.cpp",
+      "language": "cpp",
+      "includes": [
+        "railway/logic/ControllerLogic.h",
+        "railway/logic/ControllerHelpers.h"
+      ],
+      "is_header": false
+    },
     "src\\logic\\Interlocking.cpp": {
       "path": "src\\logic\\Interlocking.cpp",
       "language": "cpp",
@@ -163,9 +198,9 @@
       "file": "src\\app\\BlockController.cpp",
       "language": "cpp",
       "calls": [
-        "setAspect",
-        "init",
         "evaluate",
+        "init",
+        "setAspect",
         "nowMs"
       ],
       "body": "\n    ownTrack_.init();\n    downstreamTrack_.init();\n    signal_.init();\n\n    lastTickMs_ = clock_.nowMs();\n    last_ = railway::logic::evaluate(railway::logic::Inputs{});\n    signal_.setAspect(last_.aspect);\n",
@@ -177,13 +212,13 @@
       "language": "cpp",
       "calls": [
         "setAspect",
-        "evaluate",
-        "update",
-        "isHealthy",
         "isOccupied",
-        "nowMs"
+        "evaluateControllerLogic",
+        "isHealthy",
+        "nowMs",
+        "update"
       ],
-      "body": "\n    const auto now = clock_.nowMs();\n\n    const bool fresh = (lastTickMs_ == 0) ? true : ((now - lastTickMs_) <= cfg_.maxLoopGapMs);\n    lastTickMs_ = now;\n\n    ownTrack_.update(now);\n    downstreamTrack_.update(now);\n\n    railway::logic::Inputs in{};\n    in.controllerFresh = fresh;\n    in.ownTrackCircuitHealthy = ownTrack_.isHealthy();\n    in.ownBlockOccupied = ownTrack_.isOccupied();\n    in.downstreamBlockOccupied = downstreamTrack_.isOccupied();\n\n    last_ = railway::logic::evaluate(in);\n    signal_.setAspect(last_.aspect);\n",
+      "body": "\n    const auto now = clock_.nowMs();\n\n    ownTrack_.update(now);\n    downstreamTrack_.update(now);\n\n    last_ = railway::logic::evaluateControllerLogic(lastTickMs_, now, cfg_.maxLoopGapMs,\n                                                     ownTrack_.isHealthy(), ownTrack_.isOccupied(), downstreamTrack_.isOccupied());\n    lastTickMs_ = now;\n    signal_.setAspect(last_.aspect);\n",
       "touches_hardware": false
     },
     "void SignalHead::init": {
@@ -191,8 +226,8 @@
       "file": "src\\drivers\\SignalHead.cpp",
       "language": "cpp",
       "calls": [
-        "setAspect",
-        "configure"
+        "configure",
+        "setAspect"
       ],
       "body": "\n    gpio_.configure(cfg_.redPin, railway::hal::PinMode::OutputPushPull);\n    gpio_.configure(cfg_.yellowPin, railway::hal::PinMode::OutputPushPull);\n    gpio_.configure(cfg_.greenPin, railway::hal::PinMode::OutputPushPull);\n\n    setAspect(Aspect::Stop);\n",
       "touches_hardware": false
@@ -212,8 +247,8 @@
       "file": "src\\drivers\\SignalHead.cpp",
       "language": "cpp",
       "calls": [
-        "simultaneously",
-        "writeLamp"
+        "writeLamp",
+        "simultaneously"
       ],
       "body": "\n    // Fail-safe: any unknown value becomes STOP.\n    if (aspect != Aspect::Stop && aspect != Aspect::Caution && aspect != Aspect::Clear) {\n        aspect = Aspect::Stop;\n    }\n\n    aspect_ = aspect;\n\n    // Never energize multiple lamps simultaneously (typical signalling requirement).\n    writeLamp(cfg_.redPin, aspect_ == Aspect::Stop);\n    writeLamp(cfg_.yellowPin, aspect_ == Aspect::Caution);\n    writeLamp(cfg_.greenPin, aspect_ == Aspect::Clear);\n",
       "touches_hardware": false
@@ -223,8 +258,8 @@
       "file": "src\\drivers\\TrackCircuitInput.cpp",
       "language": "cpp",
       "calls": [
-        "readRawClear",
-        "configure"
+        "configure",
+        "readRawClear"
       ],
       "body": "\n    gpio_.configure(cfg_.pin, railway::hal::PinMode::InputPullup);\n    rawClear_ = readRawClear();\n    stableClear_ = rawClear_;\n    lastRawChangeMs_ = 0;\n    lastUpdateMs_ = 0;\n    healthy_ = true;\n    stuckLowSinceMs_ = 0;\n",
       "touches_hardware": false
@@ -255,8 +290,8 @@
       "file": "src\\hal\\ArduinoGpio.cpp",
       "language": "cpp",
       "calls": [
-        "else",
-        "digitalWrite"
+        "digitalWrite",
+        "else"
       ],
       "body": "\n#ifdef ARDUINO\n    ::digitalWrite(static_cast<int>(pin), (level == PinLevel::High) ? HIGH : LOW);\n#else\n    (void)pin;\n    (void)level;\n#endif\n",
       "touches_hardware": false
@@ -285,6 +320,25 @@
       "body": "\n    if (pin < kMaxPins) {\n        levels_[pin] = level;\n    }\n",
       "touches_hardware": false
     },
+    "computeControllerFresh": {
+      "name": "computeControllerFresh",
+      "file": "src\\logic\\ControllerHelpers.cpp",
+      "language": "cpp",
+      "calls": [],
+      "body": "\n    if (lastTickMs == 0) {\n        return true;\n    }\n    return (now - lastTickMs) <= maxLoopGapMs;\n",
+      "touches_hardware": false
+    },
+    "evaluateControllerLogic": {
+      "name": "evaluateControllerLogic",
+      "file": "src\\logic\\ControllerLogic.cpp",
+      "language": "cpp",
+      "calls": [
+        "evaluate",
+        "computeControllerFresh"
+      ],
+      "body": "\n    const bool fresh = computeControllerFresh(lastTickMs, now, maxLoopGapMs);\n\n    Inputs in{};\n    in.controllerFresh = fresh;\n    in.ownTrackCircuitHealthy = ownTrackCircuitHealthy;\n    in.ownBlockOccupied = ownBlockOccupied;\n    in.downstreamBlockOccupied = downstreamBlockOccupied;\n\n    return evaluate(in);\n",
+      "touches_hardware": false
+    },
     "evaluate": {
       "name": "evaluate",
       "file": "src\\logic\\Interlocking.cpp",
@@ -295,41 +349,41 @@
     }
   },
   "class_roles": {
-    "ArduinoGpio": "HARDWARE",
-    "MockGpio": "HARDWARE",
-    "BlockController": "MIXED",
     "SignalHead": "MIXED",
-    "TrackCircuitInput": "MIXED"
+    "ArduinoGpio": "HARDWARE",
+    "BlockController": "MIXED",
+    "TrackCircuitInput": "MIXED",
+    "MockGpio": "HARDWARE"
   },
   "call_graph": {
     "void BlockController::init": [
-      "setAspect",
-      "init",
       "evaluate",
+      "init",
+      "setAspect",
       "nowMs"
     ],
     "void BlockController::tick": [
       "setAspect",
-      "evaluate",
-      "update",
-      "isHealthy",
       "isOccupied",
-      "nowMs"
+      "evaluateControllerLogic",
+      "isHealthy",
+      "nowMs",
+      "update"
     ],
     "void SignalHead::init": [
-      "setAspect",
-      "configure"
+      "configure",
+      "setAspect"
     ],
     "void SignalHead::writeLamp": [
       "write"
     ],
     "void SignalHead::setAspect": [
-      "simultaneously",
-      "writeLamp"
+      "writeLamp",
+      "simultaneously"
     ],
     "void TrackCircuitInput::init": [
-      "readRawClear",
-      "configure"
+      "configure",
+      "readRawClear"
     ],
     "void TrackCircuitInput::update": [
       "readRawClear"
@@ -339,12 +393,17 @@
       "else"
     ],
     "void ArduinoGpio::write": [
-      "else",
-      "digitalWrite"
+      "digitalWrite",
+      "else"
     ],
     "void MockGpio::configure": [],
     "void MockGpio::write": [],
     "void MockGpio::setInputLevel": [],
+    "computeControllerFresh": [],
+    "evaluateControllerLogic": [
+      "evaluate",
+      "computeControllerFresh"
+    ],
     "evaluate": []
   },
   "hardware_flags": {
@@ -360,11 +419,13 @@
     "void MockGpio::configure": true,
     "void MockGpio::write": true,
     "void MockGpio::setInputLevel": true,
+    "computeControllerFresh": false,
+    "evaluateControllerLogic": false,
     "evaluate": false
   },
   "call_depths": {
     "void BlockController::init": 2,
-    "void BlockController::tick": 2,
+    "void BlockController::tick": 3,
     "void SignalHead::init": 1,
     "void SignalHead::writeLamp": 1,
     "void SignalHead::setAspect": 1,
@@ -375,6 +436,8 @@
     "void MockGpio::configure": 1,
     "void MockGpio::write": 1,
     "void MockGpio::setInputLevel": 1,
+    "computeControllerFresh": 1,
+    "evaluateControllerLogic": 2,
     "evaluate": 1
   },
   "file_summaries": {
@@ -384,7 +447,7 @@
         "void BlockController::init",
         "void BlockController::tick"
       ],
-      "max_call_depth": 2,
+      "max_call_depth": 3,
       "hardware_free": true,
       "dependencies": [
         "src\\logic\\Interlocking.cpp"
@@ -445,6 +508,27 @@
       "max_call_depth": 0,
       "hardware_free": true,
       "dependencies": []
+    },
+    "src\\logic\\ControllerHelpers.cpp": {
+      "testable": true,
+      "functions": [
+        "computeControllerFresh"
+      ],
+      "max_call_depth": 1,
+      "hardware_free": true,
+      "dependencies": []
+    },
+    "src\\logic\\ControllerLogic.cpp": {
+      "testable": true,
+      "functions": [
+        "evaluateControllerLogic"
+      ],
+      "max_call_depth": 2,
+      "hardware_free": true,
+      "dependencies": [
+        "src\\logic\\Interlocking.cpp",
+        "src\\logic\\ControllerHelpers.cpp"
+      ]
     },
     "src\\logic\\Interlocking.cpp": {
       "testable": true,

@@ -5,7 +5,7 @@ File: src\app\BlockController.cpp
 Functions: 2
 Testable: True
 Hardware Free: True
-Max Call Depth: 2
+Max Call Depth: 3
 Dependencies: src\logic\Interlocking.cpp
 ------------------------------
 
@@ -55,6 +55,22 @@ Testable: True
 Hardware Free: True
 Max Call Depth: 0
 Dependencies: 
+------------------------------
+
+File: src\logic\ControllerHelpers.cpp
+Functions: 1
+Testable: True
+Hardware Free: True
+Max Call Depth: 1
+Dependencies: 
+------------------------------
+
+File: src\logic\ControllerLogic.cpp
+Functions: 1
+Testable: True
+Hardware Free: True
+Max Call Depth: 2
+Dependencies: src\logic\Interlocking.cpp, src\logic\ControllerHelpers.cpp
 ------------------------------
 
 File: src\logic\Interlocking.cpp
