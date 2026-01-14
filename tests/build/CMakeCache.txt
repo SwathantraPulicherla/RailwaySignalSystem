@@ -370,6 +370,9 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
+//Enable coverage instrumentation
+RAILWAY_ENABLE_COVERAGE:BOOL=ON
+
 //Fetch GoogleTest
 RAILWAY_FETCH_GTEST:BOOL=ON
 
@@ -641,7 +644,7 @@ CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0/python3.13.exe][found components: Interpreter ][v3.13.9()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/.venv/Scripts/python.exe][found components: Interpreter ][v3.13.9()]
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
@@ -659,12 +662,12 @@ _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
-_Python3_EXECUTABLE:INTERNAL=C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0/python3.13.exe
+_Python3_EXECUTABLE:INTERNAL=C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/.venv/Scripts/python.exe
 //Path to a program.
 _Python3_EXECUTABLE_DEBUG:INTERNAL=_Python3_EXECUTABLE_DEBUG-NOTFOUND
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;9;64;32;<none>;cp313-win_amd64;;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\site-packages;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=37652cc9882f638ed4b1eaa3120b66cb
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;9;64;32;<none>;cp313-win_amd64;;C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib;C:\Users\SwathantraPulicherla\workspaces\UnitTestGen\.venv\Lib;C:\Users\SwathantraPulicherla\workspaces\UnitTestGen\.venv\Lib\site-packages;C:\Users\SwathantraPulicherla\workspaces\UnitTestGen\.venv\Lib\site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=c28268eb69d5ffc27ac27683182a6b92
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 cmake_package_name:INTERNAL=GTest

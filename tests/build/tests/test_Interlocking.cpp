@@ -1,96 +1,86 @@
 /* test_Interlocking.cpp – Auto-generated Expert Google Test Tests */
 #include <gtest/gtest.h>
-#include <stdint.h>
+#include <cstdint>
 #include "railway/logic/Interlocking.h"
 
-// Bring types into global namespace for convenience in tests
-using namespace railway::logic;
-using namespace railway::drivers;
-using namespace railway;
+// Helper to make input creation more concise
+namespace railway::logic {
+struct TestInputs : public Inputs {
+    TestInputs() {
+        controllerFresh = true;
+        ownTrackCircuitHealthy = true;
+        ownBlockOccupied = false;
+        downstreamBlockOccupied = false;
+    }
+};
+} // namespace railway::logic
 
-struct InterlockingTest : public ::testing::Test {
+
+class InterlockingTest : public ::testing::Test {
+protected:
     void SetUp() override {
-        // No shared state to set up for this pure function
+        // Any common setup for tests can go here.
+        // For this stateless function, it's not strictly necessary.
     }
 
     void TearDown() override {
-        // No shared state to tear down
+        // Any common cleanup.
     }
 };
 
-TEST_F(InterlockingTest, ControllerStaleReturnsFaultStop) {
-    Inputs in{};
-    in.controllerFresh = false; // Trigger this condition
-    in.ownTrackCircuitHealthy = true;
-    in.ownBlockOccupied = false;
-    in.downstreamBlockOccupied = false;
+TEST_F(InterlockingTest, Evaluate_ControllerStale_ReturnsStopFault) {
+    railway::logic::TestInputs in;
+    in.controllerFresh = false;
 
-    Decision out = evaluate(in);
+    railway::logic::Decision result = railway::logic::evaluate(in);
 
-    EXPECT_EQ(out.aspect, Aspect::Stop);
-    EXPECT_EQ(out.reason, StopReason::ControllerStale);
-    EXPECT_EQ(out.health, Health::Fault);
+    EXPECT_EQ(result.aspect, railway::drivers::Aspect::Stop);
+    EXPECT_EQ(result.reason, railway::logic::StopReason::ControllerStale);
+    EXPECT_EQ(result.health, railway::Health::Fault);
 }
 
-TEST_F(InterlockingTest, OwnTrackCircuitFaultReturnsDegradedStop) {
-    Inputs in{};
-    in.controllerFresh = true; // Pass previous check
-    in.ownTrackCircuitHealthy = false; // Trigger this condition
-    in.ownBlockOccupied = false;
-    in.downstreamBlockOccupied = false;
+TEST_F(InterlockingTest, Evaluate_OwnTrackCircuitUnhealthy_ReturnsStopDegraded) {
+    railway::logic::TestInputs in;
+    in.ownTrackCircuitHealthy = false;
 
-    Decision out = evaluate(in);
+    railway::logic::Decision result = railway::logic::evaluate(in);
 
-    EXPECT_EQ(out.aspect, Aspect::Stop);
-    EXPECT_EQ(out.reason, StopReason::TrackCircuitFault);
-    EXPECT_EQ(out.health, Health::Degraded);
+    EXPECT_EQ(result.aspect, railway::drivers::Aspect::Stop);
+    EXPECT_EQ(result.reason, railway::logic::StopReason::TrackCircuitFault);
+    EXPECT_EQ(result.health, railway::Health::Degraded);
 }
 
-TEST_F(InterlockingTest, OwnBlockOccupiedReturnsOkStop) {
-    Inputs in{};
-    in.controllerFresh = true;
-    in.ownTrackCircuitHealthy = true; // Pass previous checks
-    in.ownBlockOccupied = true; // Trigger this condition
-    in.downstreamBlockOccupied = false;
+TEST_F(InterlockingTest, Evaluate_OwnBlockOccupied_ReturnsStopOk) {
+    railway::logic::TestInputs in;
+    in.ownBlockOccupied = true;
 
-    Decision out = evaluate(in);
+    railway::logic::Decision result = railway::logic::evaluate(in);
 
-    EXPECT_EQ(out.aspect, Aspect::Stop);
-    EXPECT_EQ(out.reason, StopReason::OwnBlockOccupied);
-    EXPECT_EQ(out.health, Health::Ok);
+    EXPECT_EQ(result.aspect, railway::drivers::Aspect::Stop);
+    EXPECT_EQ(result.reason, railway::logic::StopReason::OwnBlockOccupied);
+    EXPECT_EQ(result.health, railway::Health::Ok);
 }
 
-TEST_F(InterlockingTest, DownstreamBlockOccupiedReturnsOkCaution) {
-    Inputs in{};
-    in.controllerFresh = true;
-    in.ownTrackCircuitHealthy = true;
-    in.ownBlockOccupied = false; // Pass previous checks
-    in.downstreamBlockOccupied = true; // Trigger this condition
+TEST_F(InterlockingTest, Evaluate_DownstreamBlockOccupied_ReturnsCautionOk) {
+    railway::logic::TestInputs in;
+    in.downstreamBlockOccupied = true;
 
-    Decision out = evaluate(in);
+    railway::logic::Decision result = railway::logic::evaluate(in);
 
-    EXPECT_EQ(out.aspect, Aspect::Caution);
-    EXPECT_EQ(out.reason, StopReason::DownstreamStop);
-    EXPECT_EQ(out.health, Health::Ok);
+    EXPECT_EQ(result.aspect, railway::drivers::Aspect::Caution);
+    EXPECT_EQ(result.reason, railway::logic::StopReason::DownstreamStop);
+    EXPECT_EQ(result.health, railway::Health::Ok);
 }
 
-TEST_F(InterlockingTest, AllClearReturnsOkClear) {
-    Inputs in{};
-    in.controllerFresh = true;
-    in.ownTrackCircuitHealthy = true;
-    in.ownBlockOccupied = false;
-    in.downstreamBlockOccupied = false; // Pass all conditions above
+TEST_F(InterlockingTest, Evaluate_AllConditionsClear_ReturnsClearOk) {
+    railway::logic::TestInputs in;
+    // All default values are already set for a clear state in TestInputs constructor
 
-    Decision out = evaluate(in);
+    railway::logic::Decision result = railway::logic::evaluate(in);
 
-    EXPECT_EQ(out.aspect, Aspect::Clear);
-    EXPECT_EQ(out.reason, StopReason::None);
-    EXPECT_EQ(out.health, Health::Ok);
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    EXPECT_EQ(result.aspect, railway::drivers::Aspect::Clear);
+    EXPECT_EQ(result.reason, railway::logic::StopReason::None);
+    EXPECT_EQ(result.health, railway::Health::Ok);
 }
 
 // Skipped due to hardware dependency: None

@@ -198,10 +198,10 @@
       "file": "src\\app\\BlockController.cpp",
       "language": "cpp",
       "calls": [
-        "evaluate",
         "init",
-        "setAspect",
-        "nowMs"
+        "evaluate",
+        "nowMs",
+        "setAspect"
       ],
       "body": "\n    ownTrack_.init();\n    downstreamTrack_.init();\n    signal_.init();\n\n    lastTickMs_ = clock_.nowMs();\n    last_ = railway::logic::evaluate(railway::logic::Inputs{});\n    signal_.setAspect(last_.aspect);\n",
       "touches_hardware": false
@@ -212,11 +212,11 @@
       "language": "cpp",
       "calls": [
         "setAspect",
-        "isOccupied",
-        "evaluateControllerLogic",
-        "isHealthy",
         "nowMs",
-        "update"
+        "isOccupied",
+        "update",
+        "evaluateControllerLogic",
+        "isHealthy"
       ],
       "body": "\n    const auto now = clock_.nowMs();\n\n    ownTrack_.update(now);\n    downstreamTrack_.update(now);\n\n    last_ = railway::logic::evaluateControllerLogic(lastTickMs_, now, cfg_.maxLoopGapMs,\n                                                     ownTrack_.isHealthy(), ownTrack_.isOccupied(), downstreamTrack_.isOccupied());\n    lastTickMs_ = now;\n    signal_.setAspect(last_.aspect);\n",
       "touches_hardware": false
@@ -226,8 +226,8 @@
       "file": "src\\drivers\\SignalHead.cpp",
       "language": "cpp",
       "calls": [
-        "configure",
-        "setAspect"
+        "setAspect",
+        "configure"
       ],
       "body": "\n    gpio_.configure(cfg_.redPin, railway::hal::PinMode::OutputPushPull);\n    gpio_.configure(cfg_.yellowPin, railway::hal::PinMode::OutputPushPull);\n    gpio_.configure(cfg_.greenPin, railway::hal::PinMode::OutputPushPull);\n\n    setAspect(Aspect::Stop);\n",
       "touches_hardware": false
@@ -349,30 +349,30 @@
     }
   },
   "class_roles": {
-    "SignalHead": "MIXED",
-    "ArduinoGpio": "HARDWARE",
-    "BlockController": "MIXED",
     "TrackCircuitInput": "MIXED",
-    "MockGpio": "HARDWARE"
+    "BlockController": "MIXED",
+    "ArduinoGpio": "HARDWARE",
+    "MockGpio": "HARDWARE",
+    "SignalHead": "MIXED"
   },
   "call_graph": {
     "void BlockController::init": [
-      "evaluate",
       "init",
-      "setAspect",
-      "nowMs"
+      "evaluate",
+      "nowMs",
+      "setAspect"
     ],
     "void BlockController::tick": [
       "setAspect",
-      "isOccupied",
-      "evaluateControllerLogic",
-      "isHealthy",
       "nowMs",
-      "update"
+      "isOccupied",
+      "update",
+      "evaluateControllerLogic",
+      "isHealthy"
     ],
     "void SignalHead::init": [
-      "configure",
-      "setAspect"
+      "setAspect",
+      "configure"
     ],
     "void SignalHead::writeLamp": [
       "write"

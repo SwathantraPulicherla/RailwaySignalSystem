@@ -4,7 +4,7 @@ REPO SCAN - FUNCTION INDEX
 Function: void BlockController::init
 File: src\app\BlockController.cpp
 Language: cpp
-Calls: evaluate, init, setAspect, nowMs
+Calls: init, evaluate, nowMs, setAspect
 Hardware Touching: False
 Call Depth: 2
 ------------------------------
@@ -12,7 +12,7 @@ Call Depth: 2
 Function: void BlockController::tick
 File: src\app\BlockController.cpp
 Language: cpp
-Calls: setAspect, isOccupied, evaluateControllerLogic, isHealthy, nowMs, update
+Calls: setAspect, nowMs, isOccupied, update, evaluateControllerLogic, isHealthy
 Hardware Touching: False
 Call Depth: 3
 ------------------------------
@@ -20,7 +20,7 @@ Call Depth: 3
 Function: void SignalHead::init
 File: src\drivers\SignalHead.cpp
 Language: cpp
-Calls: configure, setAspect
+Calls: setAspect, configure
 Hardware Touching: True
 Call Depth: 1
 ------------------------------

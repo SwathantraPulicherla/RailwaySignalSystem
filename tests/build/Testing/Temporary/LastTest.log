@@ -1,36 +1,109 @@
-Start testing: Jan 06 19:32 India Standard Time
+Start testing: Jan 14 13:15 India Standard Time
 ----------------------------------------------------------
-1/1 Testing: test_Interlocking
-1/1 Test: test_Interlocking
-Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/railway_tests.exe"
-Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build
-"test_Interlocking" start time: Jan 06 19:32 India Standard Time
+1/3 Testing: test_ControllerHelpers__src__logic
+1/3 Test: test_ControllerHelpers__src__logic
+Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_ControllerHelpers__src__logic.exe"
+Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
+"test_ControllerHelpers__src__logic" start time: Jan 14 13:15 India Standard Time
 Output:
 ----------------------------------------------------------
+Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from ControllerHelpersTest
+[ RUN      ] ControllerHelpersTest.LastTickIsZeroReturnsTrue
+[       OK ] ControllerHelpersTest.LastTickIsZeroReturnsTrue (0 ms)
+[ RUN      ] ControllerHelpersTest.GapLessThanMaxReturnsTrue
+[       OK ] ControllerHelpersTest.GapLessThanMaxReturnsTrue (0 ms)
+[ RUN      ] ControllerHelpersTest.GapEqualsMaxReturnsTrue
+[       OK ] ControllerHelpersTest.GapEqualsMaxReturnsTrue (0 ms)
+[ RUN      ] ControllerHelpersTest.GapGreaterThanMaxReturnsFalse
+[       OK ] ControllerHelpersTest.GapGreaterThanMaxReturnsFalse (0 ms)
+[ RUN      ] ControllerHelpersTest.LargeTimeValuesGapEqualsMax
+[       OK ] ControllerHelpersTest.LargeTimeValuesGapEqualsMax (0 ms)
+[ RUN      ] ControllerHelpersTest.LargeTimeValuesGapExceedsMax
+[       OK ] ControllerHelpersTest.LargeTimeValuesGapExceedsMax (0 ms)
+[----------] 6 tests from ControllerHelpersTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"test_ControllerHelpers__src__logic" end time: Jan 14 13:15 India Standard Time
+"test_ControllerHelpers__src__logic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: test_ControllerLogic__src__logic
+2/3 Test: test_ControllerLogic__src__logic
+Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_ControllerLogic__src__logic.exe"
+Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
+"test_ControllerLogic__src__logic" start time: Jan 14 13:15 India Standard Time
+Output:
+----------------------------------------------------------
+Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from ControllerLogicTest
+[ RUN      ] ControllerLogicTest.AllClearAndFresh_ReturnsClearOk
+[       OK ] ControllerLogicTest.AllClearAndFresh_ReturnsClearOk (0 ms)
+[ RUN      ] ControllerLogicTest.OwnBlockOccupied_ReturnsStopOk
+[       OK ] ControllerLogicTest.OwnBlockOccupied_ReturnsStopOk (0 ms)
+[ RUN      ] ControllerLogicTest.DownstreamBlockOccupied_ReturnsCautionOk
+[       OK ] ControllerLogicTest.DownstreamBlockOccupied_ReturnsCautionOk (0 ms)
+[ RUN      ] ControllerLogicTest.ControllerDataStale_ReturnsStopFault
+[       OK ] ControllerLogicTest.ControllerDataStale_ReturnsStopFault (0 ms)
+[ RUN      ] ControllerLogicTest.OwnTrackCircuitUnhealthy_ReturnsStopDegraded
+[       OK ] ControllerLogicTest.OwnTrackCircuitUnhealthy_ReturnsStopDegraded (0 ms)
+[ RUN      ] ControllerLogicTest.LastTickZero_IsAlwaysFresh
+[       OK ] ControllerLogicTest.LastTickZero_IsAlwaysFresh (0 ms)
+[----------] 6 tests from ControllerLogicTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"test_ControllerLogic__src__logic" end time: Jan 14 13:15 India Standard Time
+"test_ControllerLogic__src__logic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: test_Interlocking__src__logic
+3/3 Test: test_Interlocking__src__logic
+Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_Interlocking__src__logic.exe"
+Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
+"test_Interlocking__src__logic" start time: Jan 14 13:15 India Standard Time
+Output:
+----------------------------------------------------------
+Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
 [==========] Running 5 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 5 tests from InterlockingTest
-[ RUN      ] InterlockingTest.ControllerStaleReturnsFaultStop
-[       OK ] InterlockingTest.ControllerStaleReturnsFaultStop (0 ms)
-[ RUN      ] InterlockingTest.OwnTrackCircuitFaultReturnsDegradedStop
-[       OK ] InterlockingTest.OwnTrackCircuitFaultReturnsDegradedStop (0 ms)
-[ RUN      ] InterlockingTest.OwnBlockOccupiedReturnsOkStop
-[       OK ] InterlockingTest.OwnBlockOccupiedReturnsOkStop (0 ms)
-[ RUN      ] InterlockingTest.DownstreamBlockOccupiedReturnsOkCaution
-[       OK ] InterlockingTest.DownstreamBlockOccupiedReturnsOkCaution (0 ms)
-[ RUN      ] InterlockingTest.AllClearReturnsOkClear
-[       OK ] InterlockingTest.AllClearReturnsOkClear (0 ms)
+[ RUN      ] InterlockingTest.Evaluate_ControllerStale_ReturnsStopFault
+[       OK ] InterlockingTest.Evaluate_ControllerStale_ReturnsStopFault (0 ms)
+[ RUN      ] InterlockingTest.Evaluate_OwnTrackCircuitUnhealthy_ReturnsStopDegraded
+[       OK ] InterlockingTest.Evaluate_OwnTrackCircuitUnhealthy_ReturnsStopDegraded (0 ms)
+[ RUN      ] InterlockingTest.Evaluate_OwnBlockOccupied_ReturnsStopOk
+[       OK ] InterlockingTest.Evaluate_OwnBlockOccupied_ReturnsStopOk (0 ms)
+[ RUN      ] InterlockingTest.Evaluate_DownstreamBlockOccupied_ReturnsCautionOk
+[       OK ] InterlockingTest.Evaluate_DownstreamBlockOccupied_ReturnsCautionOk (0 ms)
+[ RUN      ] InterlockingTest.Evaluate_AllConditionsClear_ReturnsClearOk
+[       OK ] InterlockingTest.Evaluate_AllConditionsClear_ReturnsClearOk (0 ms)
 [----------] 5 tests from InterlockingTest (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 5 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 5 tests.
 <end of output>
-Test time =   0.01 sec
+Test time =   0.32 sec
 ----------------------------------------------------------
 Test Passed.
-"test_Interlocking" end time: Jan 06 19:32 India Standard Time
-"test_Interlocking" time elapsed: 00:00:00
+"test_Interlocking__src__logic" end time: Jan 14 13:15 India Standard Time
+"test_Interlocking__src__logic" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 06 19:32 India Standard Time
+End testing: Jan 14 13:15 India Standard Time

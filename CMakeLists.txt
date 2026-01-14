@@ -38,5 +38,3 @@ endif()
 add_subdirectory(src)
 
 add_subdirectory(tests)
-
-add_test(NAME test_Interlocking COMMAND ${CMAKE_BINARY_DIR}/tests/railway_tests)
