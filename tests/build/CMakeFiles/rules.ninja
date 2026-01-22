@@ -117,7 +117,7 @@ rule CXX_STATIC_LIBRARY_LINKER__railway_logic_
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__test_ControllerHelpers__src__logic_unscanned_
+rule CXX_COMPILER__test_SignalHead__src__drivers_unscanned_
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\SwathantraPulicherla\Downloads\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\mingw64\bin\c++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -127,7 +127,7 @@ rule CXX_COMPILER__test_ControllerHelpers__src__logic_unscanned_
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__test_ControllerHelpers__src__logic_
+rule CXX_EXECUTABLE_LINKER__test_SignalHead__src__drivers_
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Users\SwathantraPulicherla\Downloads\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\mingw64\bin\c++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -136,7 +136,7 @@ rule CXX_EXECUTABLE_LINKER__test_ControllerHelpers__src__logic_
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__test_ControllerLogic__src__logic_unscanned_
+rule CXX_COMPILER__test_TrackCircuitInput__src__drivers_unscanned_
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\Users\SwathantraPulicherla\Downloads\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\mingw64\bin\c++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -146,7 +146,7 @@ rule CXX_COMPILER__test_ControllerLogic__src__logic_unscanned_
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__test_ControllerLogic__src__logic_
+rule CXX_EXECUTABLE_LINKER__test_TrackCircuitInput__src__drivers_
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Users\SwathantraPulicherla\Downloads\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\mingw64\bin\c++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

@@ -1,0 +1,21 @@
+{
+  "safety_level": "QM",
+  "mcdc_analysis_performed": true,
+  "human_approvals_complete": false,
+  "base_tests_generated": true,
+  "coverage_status": {
+    "statement": "FAIL",
+    "branch": "FAIL",
+    "mcdc": "INCOMPLETE"
+  },
+  "coverage": {
+    "statement_pct": 16.7,
+    "branch_pct": 6.4,
+    "targets": {
+      "statement": 70,
+      "branch": 50
+    }
+  },
+  "mcdc_gaps_remaining": 10,
+  "mcdc_tests_generated": true
+}

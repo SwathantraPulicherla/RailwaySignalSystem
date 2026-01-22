@@ -12,7 +12,7 @@ Dependencies: src\logic\Interlocking.cpp
 File: src\drivers\SignalHead.cpp
 Functions: 3
 Testable: True
-Hardware Free: False
+Hardware Free: True
 Max Call Depth: 1
 Dependencies: 
 ------------------------------
@@ -20,7 +20,7 @@ Dependencies:
 File: src\drivers\TrackCircuitInput.cpp
 Functions: 2
 Testable: True
-Hardware Free: False
+Hardware Free: True
 Max Call Depth: 1
 Dependencies: 
 ------------------------------
@@ -70,7 +70,7 @@ Functions: 1
 Testable: True
 Hardware Free: True
 Max Call Depth: 2
-Dependencies: src\logic\Interlocking.cpp, src\logic\ControllerHelpers.cpp
+Dependencies: src\logic\ControllerHelpers.cpp, src\logic\Interlocking.cpp
 ------------------------------
 
 File: src\logic\Interlocking.cpp

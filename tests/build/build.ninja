@@ -888,12 +888,47 @@ build _deps/googletest-build/googletest/install/strip: phony _deps/googletest-bu
 
 build cmake_object_order_depends_target_railway_logic: phony || .
 
-build src/CMakeFiles/railway_logic.dir/logic/Interlocking.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/logic/Interlocking.cpp || cmake_object_order_depends_target_railway_logic
-  DEP_FILE = src\CMakeFiles\railway_logic.dir\logic\Interlocking.cpp.obj.d
+build src/CMakeFiles/railway_logic.dir/drivers/SignalHead.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/drivers/SignalHead.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\drivers\SignalHead.cpp.obj.d
   FLAGS = -std=gnu++17 --coverage
   INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
   OBJECT_DIR = src\CMakeFiles\railway_logic.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\logic
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\drivers
+
+build src/CMakeFiles/railway_logic.dir/drivers/TrackCircuitInput.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/drivers/TrackCircuitInput.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\drivers\TrackCircuitInput.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
+  OBJECT_DIR = src\CMakeFiles\railway_logic.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\drivers
+
+build src/CMakeFiles/railway_logic.dir/hal/ArduinoGpio.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/hal/ArduinoGpio.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\hal\ArduinoGpio.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
+  OBJECT_DIR = src\CMakeFiles\railway_logic.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\hal
+
+build src/CMakeFiles/railway_logic.dir/hal/MockGpio.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/hal/MockGpio.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\hal\MockGpio.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
+  OBJECT_DIR = src\CMakeFiles\railway_logic.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\hal
+
+build src/CMakeFiles/railway_logic.dir/hal/PlatformHal_host.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/hal/PlatformHal_host.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\hal\PlatformHal_host.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
+  OBJECT_DIR = src\CMakeFiles\railway_logic.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\hal
+
+build src/CMakeFiles/railway_logic.dir/hal/SteadyClock.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/hal/SteadyClock.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\hal\SteadyClock.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
+  OBJECT_DIR = src\CMakeFiles\railway_logic.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\hal
 
 build src/CMakeFiles/railway_logic.dir/logic/ControllerHelpers.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/logic/ControllerHelpers.cpp || cmake_object_order_depends_target_railway_logic
   DEP_FILE = src\CMakeFiles\railway_logic.dir\logic\ControllerHelpers.cpp.obj.d
@@ -909,6 +944,13 @@ build src/CMakeFiles/railway_logic.dir/logic/ControllerLogic.cpp.obj: CXX_COMPIL
   OBJECT_DIR = src\CMakeFiles\railway_logic.dir
   OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\logic
 
+build src/CMakeFiles/railway_logic.dir/logic/Interlocking.cpp.obj: CXX_COMPILER__railway_logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src/logic/Interlocking.cpp || cmake_object_order_depends_target_railway_logic
+  DEP_FILE = src\CMakeFiles\railway_logic.dir\logic\Interlocking.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include
+  OBJECT_DIR = src\CMakeFiles\railway_logic.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\railway_logic.dir\logic
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target railway_logic
@@ -917,7 +959,7 @@ build src/CMakeFiles/railway_logic.dir/logic/ControllerLogic.cpp.obj: CXX_COMPIL
 #############################################
 # Link the static library src\librailway_logic.a
 
-build src/librailway_logic.a: CXX_STATIC_LIBRARY_LINKER__railway_logic_ src/CMakeFiles/railway_logic.dir/logic/Interlocking.cpp.obj src/CMakeFiles/railway_logic.dir/logic/ControllerHelpers.cpp.obj src/CMakeFiles/railway_logic.dir/logic/ControllerLogic.cpp.obj
+build src/librailway_logic.a: CXX_STATIC_LIBRARY_LINKER__railway_logic_ src/CMakeFiles/railway_logic.dir/drivers/SignalHead.cpp.obj src/CMakeFiles/railway_logic.dir/drivers/TrackCircuitInput.cpp.obj src/CMakeFiles/railway_logic.dir/hal/ArduinoGpio.cpp.obj src/CMakeFiles/railway_logic.dir/hal/MockGpio.cpp.obj src/CMakeFiles/railway_logic.dir/hal/PlatformHal_host.cpp.obj src/CMakeFiles/railway_logic.dir/hal/SteadyClock.cpp.obj src/CMakeFiles/railway_logic.dir/logic/ControllerHelpers.cpp.obj src/CMakeFiles/railway_logic.dir/logic/ControllerLogic.cpp.obj src/CMakeFiles/railway_logic.dir/logic/Interlocking.cpp.obj
   OBJECT_DIR = src\CMakeFiles\railway_logic.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -1007,72 +1049,86 @@ build src/install/strip: phony src/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_ControllerHelpers__src__logic
+# Object build statements for EXECUTABLE target test_SignalHead__src__drivers
 
 
 #############################################
-# Order-only phony target for test_ControllerHelpers__src__logic
+# Order-only phony target for test_SignalHead__src__drivers
 
-build cmake_object_order_depends_target_test_ControllerHelpers__src__logic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_railway_logic
+build cmake_object_order_depends_target_test_SignalHead__src__drivers: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_railway_logic
 
-build tests/CMakeFiles/test_ControllerHelpers__src__logic.dir/src/logic/test_ControllerHelpers.cpp.obj: CXX_COMPILER__test_ControllerHelpers__src__logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/logic/test_ControllerHelpers.cpp || cmake_object_order_depends_target_test_ControllerHelpers__src__logic
-  DEP_FILE = tests\CMakeFiles\test_ControllerHelpers__src__logic.dir\src\logic\test_ControllerHelpers.cpp.obj.d
+build tests/CMakeFiles/test_SignalHead__src__drivers.dir/src/drivers/test_SignalHead.cpp.obj: CXX_COMPILER__test_SignalHead__src__drivers_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_SignalHead.cpp || cmake_object_order_depends_target_test_SignalHead__src__drivers
+  DEP_FILE = tests\CMakeFiles\test_SignalHead__src__drivers.dir\src\drivers\test_SignalHead.cpp.obj.d
   FLAGS = -std=gnu++17 --coverage
-  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
-  OBJECT_DIR = tests\CMakeFiles\test_ControllerHelpers__src__logic.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\test_ControllerHelpers__src__logic.dir\src\logic
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
+  OBJECT_DIR = tests\CMakeFiles\test_SignalHead__src__drivers.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\test_SignalHead__src__drivers.dir\src\drivers
+
+build tests/CMakeFiles/test_SignalHead__src__drivers.dir/stubs/Arduino_stubs.cpp.obj: CXX_COMPILER__test_SignalHead__src__drivers_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs/Arduino_stubs.cpp || cmake_object_order_depends_target_test_SignalHead__src__drivers
+  DEP_FILE = tests\CMakeFiles\test_SignalHead__src__drivers.dir\stubs\Arduino_stubs.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
+  OBJECT_DIR = tests\CMakeFiles\test_SignalHead__src__drivers.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\test_SignalHead__src__drivers.dir\stubs
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_ControllerHelpers__src__logic
+# Link build statements for EXECUTABLE target test_SignalHead__src__drivers
 
 
 #############################################
-# Link the executable tests\test_ControllerHelpers__src__logic.exe
+# Link the executable tests\test_SignalHead__src__drivers.exe
 
-build tests/test_ControllerHelpers__src__logic.exe: CXX_EXECUTABLE_LINKER__test_ControllerHelpers__src__logic_ tests/CMakeFiles/test_ControllerHelpers__src__logic.dir/src/logic/test_ControllerHelpers.cpp.obj | src/librailway_logic.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/librailway_logic.a
+build tests/test_SignalHead__src__drivers.exe: CXX_EXECUTABLE_LINKER__test_SignalHead__src__drivers_ tests/CMakeFiles/test_SignalHead__src__drivers.dir/src/drivers/test_SignalHead.cpp.obj tests/CMakeFiles/test_SignalHead__src__drivers.dir/stubs/Arduino_stubs.cpp.obj | src/librailway_logic.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/librailway_logic.a
   LINK_FLAGS = --coverage
   LINK_LIBRARIES = src/librailway_logic.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = tests\CMakeFiles\test_ControllerHelpers__src__logic.dir
+  OBJECT_DIR = tests\CMakeFiles\test_SignalHead__src__drivers.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = tests\test_ControllerHelpers__src__logic.exe
-  TARGET_IMPLIB = tests\libtest_ControllerHelpers__src__logic.dll.a
-  TARGET_PDB = test_ControllerHelpers__src__logic.exe.dbg
+  TARGET_FILE = tests\test_SignalHead__src__drivers.exe
+  TARGET_IMPLIB = tests\libtest_SignalHead__src__drivers.dll.a
+  TARGET_PDB = test_SignalHead__src__drivers.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_ControllerLogic__src__logic
+# Object build statements for EXECUTABLE target test_TrackCircuitInput__src__drivers
 
 
 #############################################
-# Order-only phony target for test_ControllerLogic__src__logic
+# Order-only phony target for test_TrackCircuitInput__src__drivers
 
-build cmake_object_order_depends_target_test_ControllerLogic__src__logic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_railway_logic
+build cmake_object_order_depends_target_test_TrackCircuitInput__src__drivers: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_railway_logic
 
-build tests/CMakeFiles/test_ControllerLogic__src__logic.dir/src/logic/test_ControllerLogic.cpp.obj: CXX_COMPILER__test_ControllerLogic__src__logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/logic/test_ControllerLogic.cpp || cmake_object_order_depends_target_test_ControllerLogic__src__logic
-  DEP_FILE = tests\CMakeFiles\test_ControllerLogic__src__logic.dir\src\logic\test_ControllerLogic.cpp.obj.d
+build tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir/src/drivers/test_TrackCircuitInput.cpp.obj: CXX_COMPILER__test_TrackCircuitInput__src__drivers_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp || cmake_object_order_depends_target_test_TrackCircuitInput__src__drivers
+  DEP_FILE = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir\src\drivers\test_TrackCircuitInput.cpp.obj.d
   FLAGS = -std=gnu++17 --coverage
-  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
-  OBJECT_DIR = tests\CMakeFiles\test_ControllerLogic__src__logic.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\test_ControllerLogic__src__logic.dir\src\logic
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
+  OBJECT_DIR = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir\src\drivers
+
+build tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir/stubs/Arduino_stubs.cpp.obj: CXX_COMPILER__test_TrackCircuitInput__src__drivers_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs/Arduino_stubs.cpp || cmake_object_order_depends_target_test_TrackCircuitInput__src__drivers
+  DEP_FILE = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir\stubs\Arduino_stubs.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
+  OBJECT_DIR = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir\stubs
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_ControllerLogic__src__logic
+# Link build statements for EXECUTABLE target test_TrackCircuitInput__src__drivers
 
 
 #############################################
-# Link the executable tests\test_ControllerLogic__src__logic.exe
+# Link the executable tests\test_TrackCircuitInput__src__drivers.exe
 
-build tests/test_ControllerLogic__src__logic.exe: CXX_EXECUTABLE_LINKER__test_ControllerLogic__src__logic_ tests/CMakeFiles/test_ControllerLogic__src__logic.dir/src/logic/test_ControllerLogic.cpp.obj | src/librailway_logic.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/librailway_logic.a
+build tests/test_TrackCircuitInput__src__drivers.exe: CXX_EXECUTABLE_LINKER__test_TrackCircuitInput__src__drivers_ tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir/src/drivers/test_TrackCircuitInput.cpp.obj tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir/stubs/Arduino_stubs.cpp.obj | src/librailway_logic.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/librailway_logic.a
   LINK_FLAGS = --coverage
   LINK_LIBRARIES = src/librailway_logic.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = tests\CMakeFiles\test_ControllerLogic__src__logic.dir
+  OBJECT_DIR = tests\CMakeFiles\test_TrackCircuitInput__src__drivers.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = tests\test_ControllerLogic__src__logic.exe
-  TARGET_IMPLIB = tests\libtest_ControllerLogic__src__logic.dll.a
-  TARGET_PDB = test_ControllerLogic__src__logic.exe.dbg
+  TARGET_FILE = tests\test_TrackCircuitInput__src__drivers.exe
+  TARGET_IMPLIB = tests\libtest_TrackCircuitInput__src__drivers.dll.a
+  TARGET_PDB = test_TrackCircuitInput__src__drivers.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test_Interlocking__src__logic
@@ -1086,9 +1142,16 @@ build cmake_object_order_depends_target_test_Interlocking__src__logic: phony || 
 build tests/CMakeFiles/test_Interlocking__src__logic.dir/src/logic/test_Interlocking.cpp.obj: CXX_COMPILER__test_Interlocking__src__logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/logic/test_Interlocking.cpp || cmake_object_order_depends_target_test_Interlocking__src__logic
   DEP_FILE = tests\CMakeFiles\test_Interlocking__src__logic.dir\src\logic\test_Interlocking.cpp.obj.d
   FLAGS = -std=gnu++17 --coverage
-  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
   OBJECT_DIR = tests\CMakeFiles\test_Interlocking__src__logic.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\test_Interlocking__src__logic.dir\src\logic
+
+build tests/CMakeFiles/test_Interlocking__src__logic.dir/stubs/Arduino_stubs.cpp.obj: CXX_COMPILER__test_Interlocking__src__logic_unscanned_ C$:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs/Arduino_stubs.cpp || cmake_object_order_depends_target_test_Interlocking__src__logic
+  DEP_FILE = tests\CMakeFiles\test_Interlocking__src__logic.dir\stubs\Arduino_stubs.cpp.obj.d
+  FLAGS = -std=gnu++17 --coverage
+  INCLUDES = -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/include -IC:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/stubs -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/include -isystem C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest
+  OBJECT_DIR = tests\CMakeFiles\test_Interlocking__src__logic.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\test_Interlocking__src__logic.dir\stubs
 
 
 # =============================================================================
@@ -1098,7 +1161,7 @@ build tests/CMakeFiles/test_Interlocking__src__logic.dir/src/logic/test_Interloc
 #############################################
 # Link the executable tests\test_Interlocking__src__logic.exe
 
-build tests/test_Interlocking__src__logic.exe: CXX_EXECUTABLE_LINKER__test_Interlocking__src__logic_ tests/CMakeFiles/test_Interlocking__src__logic.dir/src/logic/test_Interlocking.cpp.obj | src/librailway_logic.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/librailway_logic.a
+build tests/test_Interlocking__src__logic.exe: CXX_EXECUTABLE_LINKER__test_Interlocking__src__logic_ tests/CMakeFiles/test_Interlocking__src__logic.dir/src/logic/test_Interlocking.cpp.obj tests/CMakeFiles/test_Interlocking__src__logic.dir/stubs/Arduino_stubs.cpp.obj | src/librailway_logic.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/librailway_logic.a
   LINK_FLAGS = --coverage
   LINK_LIBRARIES = src/librailway_logic.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = tests\CMakeFiles\test_Interlocking__src__logic.dir
@@ -1208,17 +1271,17 @@ build librailway_logic.a: phony src/librailway_logic.a
 
 build railway_logic: phony src/librailway_logic.a
 
-build test_ControllerHelpers__src__logic: phony tests/test_ControllerHelpers__src__logic.exe
-
-build test_ControllerHelpers__src__logic.exe: phony tests/test_ControllerHelpers__src__logic.exe
-
-build test_ControllerLogic__src__logic: phony tests/test_ControllerLogic__src__logic.exe
-
-build test_ControllerLogic__src__logic.exe: phony tests/test_ControllerLogic__src__logic.exe
-
 build test_Interlocking__src__logic: phony tests/test_Interlocking__src__logic.exe
 
 build test_Interlocking__src__logic.exe: phony tests/test_Interlocking__src__logic.exe
+
+build test_SignalHead__src__drivers: phony tests/test_SignalHead__src__drivers.exe
+
+build test_SignalHead__src__drivers.exe: phony tests/test_SignalHead__src__drivers.exe
+
+build test_TrackCircuitInput__src__drivers: phony tests/test_TrackCircuitInput__src__drivers.exe
+
+build test_TrackCircuitInput__src__drivers.exe: phony tests/test_TrackCircuitInput__src__drivers.exe
 
 # =============================================================================
 # Folder targets.
@@ -1263,7 +1326,7 @@ build src/all: phony src/librailway_logic.a
 #############################################
 # Folder: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
 
-build tests/all: phony tests/test_ControllerHelpers__src__logic.exe tests/test_ControllerLogic__src__logic.exe tests/test_Interlocking__src__logic.exe
+build tests/all: phony tests/test_SignalHead__src__drivers.exe tests/test_TrackCircuitInput__src__drivers.exe tests/test_Interlocking__src__logic.exe
 
 # =============================================================================
 # Built-in targets

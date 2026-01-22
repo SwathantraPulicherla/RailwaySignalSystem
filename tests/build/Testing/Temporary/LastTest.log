@@ -1,109 +1,103 @@
-Start testing: Jan 14 13:15 India Standard Time
+Start testing: Jan 17 01:05 India Standard Time
 ----------------------------------------------------------
-1/3 Testing: test_ControllerHelpers__src__logic
-1/3 Test: test_ControllerHelpers__src__logic
-Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_ControllerHelpers__src__logic.exe"
+2/3 Testing: test_TrackCircuitInput__src__drivers
+2/3 Test: test_TrackCircuitInput__src__drivers
+Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_TrackCircuitInput__src__drivers.exe"
 Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
-"test_ControllerHelpers__src__logic" start time: Jan 14 13:15 India Standard Time
+"test_TrackCircuitInput__src__drivers" start time: Jan 17 01:05 India Standard Time
 Output:
 ----------------------------------------------------------
 Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
-[==========] Running 6 tests from 1 test suite.
+Note: Google Test filter = AISEC_MCDC_*.*:AISEC_BASE_*.*
+[==========] Running 22 tests from 2 test suites.
 [----------] Global test environment set-up.
-[----------] 6 tests from ControllerHelpersTest
-[ RUN      ] ControllerHelpersTest.LastTickIsZeroReturnsTrue
-[       OK ] ControllerHelpersTest.LastTickIsZeroReturnsTrue (0 ms)
-[ RUN      ] ControllerHelpersTest.GapLessThanMaxReturnsTrue
-[       OK ] ControllerHelpersTest.GapLessThanMaxReturnsTrue (0 ms)
-[ RUN      ] ControllerHelpersTest.GapEqualsMaxReturnsTrue
-[       OK ] ControllerHelpersTest.GapEqualsMaxReturnsTrue (0 ms)
-[ RUN      ] ControllerHelpersTest.GapGreaterThanMaxReturnsFalse
-[       OK ] ControllerHelpersTest.GapGreaterThanMaxReturnsFalse (0 ms)
-[ RUN      ] ControllerHelpersTest.LargeTimeValuesGapEqualsMax
-[       OK ] ControllerHelpersTest.LargeTimeValuesGapEqualsMax (0 ms)
-[ RUN      ] ControllerHelpersTest.LargeTimeValuesGapExceedsMax
-[       OK ] ControllerHelpersTest.LargeTimeValuesGapExceedsMax (0 ms)
-[----------] 6 tests from ControllerHelpersTest (0 ms total)
+[----------] 13 tests from AISEC_BASE_TrackCircuitInputTest
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitConfiguresGpioCorrectly
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitConfiguresGpioCorrectly (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveLowAndPinHigh
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveLowAndPinHigh (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:106: Failure
+Value of: circuit_->isOccupied()
+  Actual: false
+Expected: true
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:116: Failure
+Value of: circuit_->isOccupied()
+  Actual: true
+Expected: false
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromClearToOccupied
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromClearToOccupied (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromOccupiedToClear
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromOccupiedToClear (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateSetsHealthyToFalseWhenStuckOccupiedBeyondThreshold
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateSetsHealthyToFalseWhenStuckOccupiedBeyondThreshold (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateResetsStuckLowFaultWhenCircuitBecomesClear
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateResetsStuckLowFaultWhenCircuitBecomesClear (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroDebounceMsChangesStateImmediately
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroDebounceMsChangesStateImmediately (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroStuckLowFaultMsGoesUnhealthyImmediatelyIfOccupied
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroStuckLowFaultMsGoesUnhealthyImmediatelyIfOccupied (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:246: Failure
+Value of: circuit_->isHealthy()
+  Actual: true
+Expected: false
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:267: Failure
+Value of: circuit_->isOccupied()
+  Actual: false
+Expected: true
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForStuckLowFault
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForStuckLowFault (0 ms)
+[----------] 13 tests from AISEC_BASE_TrackCircuitInputTest (0 ms total)
+
+[----------] 9 tests from AISEC_MCDC_TrackCircuitInputTest_Decision_1
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitConfiguresGpioAsInputPullup
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitConfiguresGpioAsInputPullup (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitSetsInitialClearStateBasedOnGpioReadAndActiveLowConfig
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitSetsInitialClearStateBasedOnGpioReadAndActiveLowConfig (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromClearToOccupied
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromClearToOccupied (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromOccupiedToClear
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromOccupiedToClear (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDetectsAndRecoversFromStuckLowFault
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDetectsAndRecoversFromStuckLowFault (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDoesNotBecomeUnhealthyIfStuckLowClearsBeforeThreshold
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDoesNotBecomeUnhealthyIfStuckLowClearsBeforeThreshold (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateHandlesZeroTimeThresholds
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateHandlesZeroTimeThresholds (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowTrue_GpioHigh_ExpectClear
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowTrue_GpioHigh_ExpectClear (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowFalse_GpioHigh_ExpectOccupied
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowFalse_GpioHigh_ExpectOccupied (0 ms)
+[----------] 9 tests from AISEC_MCDC_TrackCircuitInputTest_Decision_1 (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 6 tests.
+[==========] 22 tests from 2 test suites ran. (1 ms total)
+[  PASSED  ] 18 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce
+
+ 4 FAILED TESTS
+libgcov profiling error:C:\Users\SwathantraPulicherla\workspaces\UnitTestGen\RailwaySignalSystem\tests\build\tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir/src/drivers/test_TrackCircuitInput.cpp.gcda:overwriting an existing profile data with a different checksum
 <end of output>
-Test time =   0.39 sec
+Test time =   0.28 sec
 ----------------------------------------------------------
-Test Passed.
-"test_ControllerHelpers__src__logic" end time: Jan 14 13:15 India Standard Time
-"test_ControllerHelpers__src__logic" time elapsed: 00:00:00
-----------------------------------------------------------
-
-2/3 Testing: test_ControllerLogic__src__logic
-2/3 Test: test_ControllerLogic__src__logic
-Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_ControllerLogic__src__logic.exe"
-Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
-"test_ControllerLogic__src__logic" start time: Jan 14 13:15 India Standard Time
-Output:
-----------------------------------------------------------
-Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
-[==========] Running 6 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 6 tests from ControllerLogicTest
-[ RUN      ] ControllerLogicTest.AllClearAndFresh_ReturnsClearOk
-[       OK ] ControllerLogicTest.AllClearAndFresh_ReturnsClearOk (0 ms)
-[ RUN      ] ControllerLogicTest.OwnBlockOccupied_ReturnsStopOk
-[       OK ] ControllerLogicTest.OwnBlockOccupied_ReturnsStopOk (0 ms)
-[ RUN      ] ControllerLogicTest.DownstreamBlockOccupied_ReturnsCautionOk
-[       OK ] ControllerLogicTest.DownstreamBlockOccupied_ReturnsCautionOk (0 ms)
-[ RUN      ] ControllerLogicTest.ControllerDataStale_ReturnsStopFault
-[       OK ] ControllerLogicTest.ControllerDataStale_ReturnsStopFault (0 ms)
-[ RUN      ] ControllerLogicTest.OwnTrackCircuitUnhealthy_ReturnsStopDegraded
-[       OK ] ControllerLogicTest.OwnTrackCircuitUnhealthy_ReturnsStopDegraded (0 ms)
-[ RUN      ] ControllerLogicTest.LastTickZero_IsAlwaysFresh
-[       OK ] ControllerLogicTest.LastTickZero_IsAlwaysFresh (0 ms)
-[----------] 6 tests from ControllerLogicTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 6 tests.
-<end of output>
-Test time =   0.29 sec
-----------------------------------------------------------
-Test Passed.
-"test_ControllerLogic__src__logic" end time: Jan 14 13:15 India Standard Time
-"test_ControllerLogic__src__logic" time elapsed: 00:00:00
+Test Failed.
+"test_TrackCircuitInput__src__drivers" end time: Jan 17 01:05 India Standard Time
+"test_TrackCircuitInput__src__drivers" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/3 Testing: test_Interlocking__src__logic
-3/3 Test: test_Interlocking__src__logic
-Command: "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/test_Interlocking__src__logic.exe"
-Directory: C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests
-"test_Interlocking__src__logic" start time: Jan 14 13:15 India Standard Time
-Output:
-----------------------------------------------------------
-Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
-[==========] Running 5 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 5 tests from InterlockingTest
-[ RUN      ] InterlockingTest.Evaluate_ControllerStale_ReturnsStopFault
-[       OK ] InterlockingTest.Evaluate_ControllerStale_ReturnsStopFault (0 ms)
-[ RUN      ] InterlockingTest.Evaluate_OwnTrackCircuitUnhealthy_ReturnsStopDegraded
-[       OK ] InterlockingTest.Evaluate_OwnTrackCircuitUnhealthy_ReturnsStopDegraded (0 ms)
-[ RUN      ] InterlockingTest.Evaluate_OwnBlockOccupied_ReturnsStopOk
-[       OK ] InterlockingTest.Evaluate_OwnBlockOccupied_ReturnsStopOk (0 ms)
-[ RUN      ] InterlockingTest.Evaluate_DownstreamBlockOccupied_ReturnsCautionOk
-[       OK ] InterlockingTest.Evaluate_DownstreamBlockOccupied_ReturnsCautionOk (0 ms)
-[ RUN      ] InterlockingTest.Evaluate_AllConditionsClear_ReturnsClearOk
-[       OK ] InterlockingTest.Evaluate_AllConditionsClear_ReturnsClearOk (0 ms)
-[----------] 5 tests from InterlockingTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.
-<end of output>
-Test time =   0.32 sec
-----------------------------------------------------------
-Test Passed.
-"test_Interlocking__src__logic" end time: Jan 14 13:15 India Standard Time
-"test_Interlocking__src__logic" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Jan 14 13:15 India Standard Time
+End testing: Jan 17 01:05 India Standard Time

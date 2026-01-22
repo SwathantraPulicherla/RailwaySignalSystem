@@ -66,8 +66,8 @@ C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/b
 C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/src/CMakeFiles/install.dir
 C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/src/CMakeFiles/install/local.dir
 C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/src/CMakeFiles/install/strip.dir
-C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/test_ControllerHelpers__src__logic.dir
-C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/test_ControllerLogic__src__logic.dir
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/test_SignalHead__src__drivers.dir
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir
 C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/test_Interlocking__src__logic.dir
 C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/test.dir
 C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/tests/CMakeFiles/edit_cache.dir

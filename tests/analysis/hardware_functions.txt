@@ -1,9 +1,6 @@
 REPO SCAN - HARDWARE-TOUCHING FUNCTIONS
 ==================================================
 
-void SignalHead::init (from src\drivers\SignalHead.cpp)
-void SignalHead::writeLamp (from src\drivers\SignalHead.cpp)
-void TrackCircuitInput::init (from src\drivers\TrackCircuitInput.cpp)
 void ArduinoGpio::configure (from src\hal\ArduinoGpio.cpp)
 void ArduinoGpio::write (from src\hal\ArduinoGpio.cpp)
 void MockGpio::configure (from src\hal\MockGpio.cpp)

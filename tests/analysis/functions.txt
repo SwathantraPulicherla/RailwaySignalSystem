@@ -4,7 +4,7 @@ REPO SCAN - FUNCTION INDEX
 Function: void BlockController::init
 File: src\app\BlockController.cpp
 Language: cpp
-Calls: init, evaluate, nowMs, setAspect
+Calls: setAspect, nowMs, init, evaluate
 Hardware Touching: False
 Call Depth: 2
 ------------------------------
@@ -12,7 +12,7 @@ Call Depth: 2
 Function: void BlockController::tick
 File: src\app\BlockController.cpp
 Language: cpp
-Calls: setAspect, nowMs, isOccupied, update, evaluateControllerLogic, isHealthy
+Calls: nowMs, isOccupied, evaluateControllerLogic, update, setAspect, isHealthy
 Hardware Touching: False
 Call Depth: 3
 ------------------------------
@@ -21,7 +21,7 @@ Function: void SignalHead::init
 File: src\drivers\SignalHead.cpp
 Language: cpp
 Calls: setAspect, configure
-Hardware Touching: True
+Hardware Touching: False
 Call Depth: 1
 ------------------------------
 
@@ -29,7 +29,7 @@ Function: void SignalHead::writeLamp
 File: src\drivers\SignalHead.cpp
 Language: cpp
 Calls: write
-Hardware Touching: True
+Hardware Touching: False
 Call Depth: 1
 ------------------------------
 
@@ -44,8 +44,8 @@ Call Depth: 1
 Function: void TrackCircuitInput::init
 File: src\drivers\TrackCircuitInput.cpp
 Language: cpp
-Calls: configure, readRawClear
-Hardware Touching: True
+Calls: readRawClear, configure
+Hardware Touching: False
 Call Depth: 1
 ------------------------------
 
@@ -60,7 +60,7 @@ Call Depth: 1
 Function: void ArduinoGpio::configure
 File: src\hal\ArduinoGpio.cpp
 Language: cpp
-Calls: pinMode, else
+Calls: else, pinMode
 Hardware Touching: True
 Call Depth: 1
 ------------------------------
@@ -68,7 +68,7 @@ Call Depth: 1
 Function: void ArduinoGpio::write
 File: src\hal\ArduinoGpio.cpp
 Language: cpp
-Calls: digitalWrite, else
+Calls: else, digitalWrite
 Hardware Touching: True
 Call Depth: 1
 ------------------------------

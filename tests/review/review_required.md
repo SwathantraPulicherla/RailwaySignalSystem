@@ -3,9 +3,7 @@
 This repository contains AI-generated test code. **Human review is mandatory before any build/test execution.**
 
 ## Generated test files
-- tests/src/logic/test_ControllerHelpers.cpp
-- tests/src/logic/test_ControllerLogic.cpp
-- tests/src/logic/test_Interlocking.cpp
+- tests/src/app/test_BlockController.cpp
 
 ## Skipped functions (with reasons)
 - (none)
@@ -22,17 +20,11 @@ This repository contains AI-generated test code. **Human review is mandatory bef
 Create an approval file for EACH generated test file before building or running tests:
 
 Required approval files (preferred; mirrors project structure under tests/):
-- tests/review/src/logic/test_ControllerHelpers.cpp.flag
-- tests/review/src/logic/test_ControllerLogic.cpp.flag
-- tests/review/src/logic/test_Interlocking.cpp.flag
+- tests/review/src/app/test_BlockController.cpp.flag
 
 Also accepted (back-compat):
-- tests/review/tests/src/logic/test_ControllerHelpers.cpp.flag
-- tests/review/tests/src/logic/test_ControllerLogic.cpp.flag
-- tests/review/tests/src/logic/test_Interlocking.cpp.flag
-- tests/review/APPROVED.test_ControllerHelpers.cpp.flag
-- tests/review/APPROVED.test_ControllerLogic.cpp.flag
-- tests/review/APPROVED.test_Interlocking.cpp.flag
+- tests/review/tests/src/app/test_BlockController.cpp.flag
+- tests/review/APPROVED.test_BlockController.cpp.flag
 
 Each approval file contents must be exactly:
 
