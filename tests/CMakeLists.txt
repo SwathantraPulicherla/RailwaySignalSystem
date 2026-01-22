@@ -2,6 +2,9 @@ file(GLOB_RECURSE TEST_SOURCES CONFIGURE_DEPENDS
     "test_*.cpp"
 )
 
+# Optional host stubs used by generated tests (e.g. Arduino_stubs.h).
+set(TEST_STUBS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/stubs")
+
 # Exclude non-test artifact directories under tests/.
 set(_FILTERED_TEST_SOURCES "")
 foreach(_p ${TEST_SOURCES})
@@ -39,6 +42,13 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
     add_executable(${TEST_NAME}
         ${_abs}
     )
+
+    if(EXISTS "${TEST_STUBS_DIR}/Arduino_stubs.cpp")
+        target_sources(${TEST_NAME} PRIVATE "${TEST_STUBS_DIR}/Arduino_stubs.cpp")
+    endif()
+    if(EXISTS "${TEST_STUBS_DIR}")
+        target_include_directories(${TEST_NAME} PRIVATE "${TEST_STUBS_DIR}")
+    endif()
 
     target_link_libraries(${TEST_NAME} PRIVATE railway_logic)
     target_compile_features(${TEST_NAME} PRIVATE cxx_std_17)

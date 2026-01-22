@@ -199,8 +199,8 @@
       "language": "cpp",
       "calls": [
         "init",
-        "evaluate",
         "nowMs",
+        "evaluate",
         "setAspect"
       ],
       "body": "\n    ownTrack_.init();\n    downstreamTrack_.init();\n    signal_.init();\n\n    lastTickMs_ = clock_.nowMs();\n    last_ = railway::logic::evaluate(railway::logic::Inputs{});\n    signal_.setAspect(last_.aspect);\n",
@@ -211,10 +211,10 @@
       "file": "src\\app\\BlockController.cpp",
       "language": "cpp",
       "calls": [
-        "setAspect",
         "nowMs",
-        "isOccupied",
+        "setAspect",
         "update",
+        "isOccupied",
         "evaluateControllerLogic",
         "isHealthy"
       ],
@@ -247,8 +247,8 @@
       "file": "src\\drivers\\SignalHead.cpp",
       "language": "cpp",
       "calls": [
-        "writeLamp",
-        "simultaneously"
+        "simultaneously",
+        "writeLamp"
       ],
       "body": "\n    // Fail-safe: any unknown value becomes STOP.\n    if (aspect != Aspect::Stop && aspect != Aspect::Caution && aspect != Aspect::Clear) {\n        aspect = Aspect::Stop;\n    }\n\n    aspect_ = aspect;\n\n    // Never energize multiple lamps simultaneously (typical signalling requirement).\n    writeLamp(cfg_.redPin, aspect_ == Aspect::Stop);\n    writeLamp(cfg_.yellowPin, aspect_ == Aspect::Caution);\n    writeLamp(cfg_.greenPin, aspect_ == Aspect::Clear);\n",
       "touches_hardware": false
@@ -258,8 +258,8 @@
       "file": "src\\drivers\\TrackCircuitInput.cpp",
       "language": "cpp",
       "calls": [
-        "configure",
-        "readRawClear"
+        "readRawClear",
+        "configure"
       ],
       "body": "\n    gpio_.configure(cfg_.pin, railway::hal::PinMode::InputPullup);\n    rawClear_ = readRawClear();\n    stableClear_ = rawClear_;\n    lastRawChangeMs_ = 0;\n    lastUpdateMs_ = 0;\n    healthy_ = true;\n    stuckLowSinceMs_ = 0;\n",
       "touches_hardware": false
@@ -290,8 +290,8 @@
       "file": "src\\hal\\ArduinoGpio.cpp",
       "language": "cpp",
       "calls": [
-        "digitalWrite",
-        "else"
+        "else",
+        "digitalWrite"
       ],
       "body": "\n#ifdef ARDUINO\n    ::digitalWrite(static_cast<int>(pin), (level == PinLevel::High) ? HIGH : LOW);\n#else\n    (void)pin;\n    (void)level;\n#endif\n",
       "touches_hardware": false
@@ -349,24 +349,24 @@
     }
   },
   "class_roles": {
-    "TrackCircuitInput": "MIXED",
-    "BlockController": "MIXED",
-    "ArduinoGpio": "HARDWARE",
     "MockGpio": "HARDWARE",
+    "TrackCircuitInput": "MIXED",
+    "ArduinoGpio": "HARDWARE",
+    "BlockController": "MIXED",
     "SignalHead": "MIXED"
   },
   "call_graph": {
     "void BlockController::init": [
       "init",
-      "evaluate",
       "nowMs",
+      "evaluate",
       "setAspect"
     ],
     "void BlockController::tick": [
-      "setAspect",
       "nowMs",
-      "isOccupied",
+      "setAspect",
       "update",
+      "isOccupied",
       "evaluateControllerLogic",
       "isHealthy"
     ],
@@ -378,12 +378,12 @@
       "write"
     ],
     "void SignalHead::setAspect": [
-      "writeLamp",
-      "simultaneously"
+      "simultaneously",
+      "writeLamp"
     ],
     "void TrackCircuitInput::init": [
-      "configure",
-      "readRawClear"
+      "readRawClear",
+      "configure"
     ],
     "void TrackCircuitInput::update": [
       "readRawClear"
@@ -393,8 +393,8 @@
       "else"
     ],
     "void ArduinoGpio::write": [
-      "digitalWrite",
-      "else"
+      "else",
+      "digitalWrite"
     ],
     "void MockGpio::configure": [],
     "void MockGpio::write": [],
@@ -409,10 +409,10 @@
   "hardware_flags": {
     "void BlockController::init": false,
     "void BlockController::tick": false,
-    "void SignalHead::init": true,
-    "void SignalHead::writeLamp": true,
+    "void SignalHead::init": false,
+    "void SignalHead::writeLamp": false,
     "void SignalHead::setAspect": false,
-    "void TrackCircuitInput::init": true,
+    "void TrackCircuitInput::init": false,
     "void TrackCircuitInput::update": false,
     "void ArduinoGpio::configure": true,
     "void ArduinoGpio::write": true,
@@ -461,7 +461,7 @@
         "void SignalHead::setAspect"
       ],
       "max_call_depth": 1,
-      "hardware_free": false,
+      "hardware_free": true,
       "dependencies": []
     },
     "src\\drivers\\TrackCircuitInput.cpp": {
@@ -471,7 +471,7 @@
         "void TrackCircuitInput::update"
       ],
       "max_call_depth": 1,
-      "hardware_free": false,
+      "hardware_free": true,
       "dependencies": []
     },
     "src\\hal\\ArduinoGpio.cpp": {
