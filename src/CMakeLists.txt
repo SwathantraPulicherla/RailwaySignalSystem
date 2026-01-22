@@ -4,6 +4,14 @@ file(GLOB_RECURSE RAILWAY_LOGIC_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/hal/*.cpp"
 )
 
+<<<<<<< HEAD
+=======
+# Include app modules that are safe for unit testing, while excluding entry points.
+list(APPEND RAILWAY_LOGIC_SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/app/BlockController.cpp"
+)
+
+>>>>>>> 1bb9553adad21f283406387bc632c972cb6f71b6
 # Intentionally exclude src/app/* (may define main() / platform entry points).
 add_library(railway_logic ${RAILWAY_LOGIC_SOURCES})
 

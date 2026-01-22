@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-01-16T20:21:13Z",
+  "source_root": "src",
+  "files": {
+    "src/app/BlockController.cpp": {
+      "source_hash": "46b56b8871f2296001228393e03b7e4271cf8f5c332ce3763018b30cf552903f"
+    },
+    "src/app/main.cpp": {
+      "source_hash": "2b7a9b11f99f2ad49b072807b21421638f71e2fb51f5e0ebc7007f312811fee2"
+    },
+    "src/drivers/SignalHead.cpp": {
+      "source_hash": "2a3323486a289805fa07e0e8cc1b74705e11b1024e354652a278746670f405d8"
+    },
+    "src/drivers/TrackCircuitInput.cpp": {
+      "source_hash": "385f67a7137f16e71698fa0aad0a316d66c3e7de5cfdca7a102ac1ea425f9a27"
+    },
+    "src/hal/ArduinoGpio.cpp": {
+      "source_hash": "1038e968fe66072627cc1939a979bc07d2c406816a8ab500275fdc7d00574412"
+    },
+    "src/hal/MockGpio.cpp": {
+      "source_hash": "8b0572c207665148153660f278cb668b463e51c3a5e9d6c6f21c9ec582cf80db"
+    },
+    "src/hal/PlatformHal_host.cpp": {
+      "source_hash": "bc702e980e4c4018979e9510ff1db9228cfe0e85654045532c7022c36cbe0989"
+    },
+    "src/hal/SteadyClock.cpp": {
+      "source_hash": "10feadf1c7d354ad9ef198baab082c0d0f7ce55c053be9b63fcf688ea4b382c0"
+    },
+    "src/logic/ControllerHelpers.cpp": {
+      "source_hash": "7d9f34cc862e0dc211fe13205e6dafafc0fc556dd523e09d1d208bd8ac407c1f"
+    },
+    "src/logic/ControllerLogic.cpp": {
+      "source_hash": "8e7e542d79b2904e0bfb1c4c709943eeef1094bd9ee670786009c03b9ae9ccac"
+    },
+    "src/logic/Interlocking.cpp": {
+      "source_hash": "623e7780c3397122641dcd9dfaa9ff6a1a4e37e3b5a79e9f0a6b38db0321bff8"
+    }
+  }
+}

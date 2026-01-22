@@ -1,0 +1,123 @@
+REPO SCAN - FUNCTION INDEX
+==================================================
+
+Function: void BlockController::init
+File: src\app\BlockController.cpp
+Language: cpp
+Calls: setAspect, nowMs, init, evaluate
+Hardware Touching: False
+Call Depth: 2
+------------------------------
+
+Function: void BlockController::tick
+File: src\app\BlockController.cpp
+Language: cpp
+Calls: nowMs, isOccupied, evaluateControllerLogic, update, setAspect, isHealthy
+Hardware Touching: False
+Call Depth: 3
+------------------------------
+
+Function: void SignalHead::init
+File: src\drivers\SignalHead.cpp
+Language: cpp
+Calls: setAspect, configure
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: void SignalHead::writeLamp
+File: src\drivers\SignalHead.cpp
+Language: cpp
+Calls: write
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: void SignalHead::setAspect
+File: src\drivers\SignalHead.cpp
+Language: cpp
+Calls: writeLamp, simultaneously
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: void TrackCircuitInput::init
+File: src\drivers\TrackCircuitInput.cpp
+Language: cpp
+Calls: readRawClear, configure
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: void TrackCircuitInput::update
+File: src\drivers\TrackCircuitInput.cpp
+Language: cpp
+Calls: readRawClear
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: void ArduinoGpio::configure
+File: src\hal\ArduinoGpio.cpp
+Language: cpp
+Calls: else, pinMode
+Hardware Touching: True
+Call Depth: 1
+------------------------------
+
+Function: void ArduinoGpio::write
+File: src\hal\ArduinoGpio.cpp
+Language: cpp
+Calls: else, digitalWrite
+Hardware Touching: True
+Call Depth: 1
+------------------------------
+
+Function: void MockGpio::configure
+File: src\hal\MockGpio.cpp
+Language: cpp
+Calls: 
+Hardware Touching: True
+Call Depth: 1
+------------------------------
+
+Function: void MockGpio::write
+File: src\hal\MockGpio.cpp
+Language: cpp
+Calls: 
+Hardware Touching: True
+Call Depth: 1
+------------------------------
+
+Function: void MockGpio::setInputLevel
+File: src\hal\MockGpio.cpp
+Language: cpp
+Calls: 
+Hardware Touching: True
+Call Depth: 1
+------------------------------
+
+Function: computeControllerFresh
+File: src\logic\ControllerHelpers.cpp
+Language: cpp
+Calls: 
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+
+Function: evaluateControllerLogic
+File: src\logic\ControllerLogic.cpp
+Language: cpp
+Calls: evaluate, computeControllerFresh
+Hardware Touching: False
+Call Depth: 2
+------------------------------
+
+Function: evaluate
+File: src\logic\Interlocking.cpp
+Language: cpp
+Calls: 
+Hardware Touching: False
+Call Depth: 1
+------------------------------
+

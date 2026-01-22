@@ -1,0 +1,129 @@
+{
+  "sections": {
+    "08b9d7fef31c056a0f6c4d288d5da2e2fb71dfb31ab94a8f4ff69617bda6206a": {
+      "active": false,
+      "approved": true,
+      "created_at": "2026-01-14T12:12:12.290512+00:00",
+      "decision": null,
+      "kind": "base",
+      "name": "base_1",
+      "reviewed_at": "2026-01-14T12:28:40.328243+00:00",
+      "reviewed_by": "Mia",
+      "section_sha256": "08b9d7fef31c056a0f6c4d288d5da2e2fb71dfb31ab94a8f4ff69617bda6206a",
+      "source_rel": "src/drivers/SignalHead.cpp",
+      "source_sha256": "bd4ad2d13c0e7df96b5ee074275773aecd624d551ad02c492814fe5c076ebd8e",
+      "test_file_rel": "tests/src/drivers/test_SignalHead.cpp"
+    },
+    "232a4ea9c27e384b4ebf3b6f79b4072b2c9d12fc3b121b56a5feeae4b5ed3c8a": {
+      "active": true,
+      "approved": true,
+      "created_at": "2026-01-16T18:51:27.585416+00:00",
+      "decision": {
+        "conditions": [
+          "cfg_.activeLow"
+        ],
+        "expression": "cfg_.activeLow",
+        "kind": "ternary",
+        "line": 23,
+        "required_pairs_estimate": 1
+      },
+      "kind": "mcdc",
+      "name": "mcdc_1",
+      "reviewed_at": "2026-01-16T19:13:24.621111+00:00",
+      "reviewed_by": "Mia",
+      "section_sha256": "232a4ea9c27e384b4ebf3b6f79b4072b2c9d12fc3b121b56a5feeae4b5ed3c8a",
+      "source_rel": "src/drivers/TrackCircuitInput.cpp",
+      "source_sha256": "6ff55728ec0af07478486a974cb7926478eb36bce960577400efc8946af3ff7d",
+      "test_file_rel": "tests/src/drivers/test_TrackCircuitInput.cpp"
+    },
+    "42f6d9951590c2e4237a875bbbc470b45923e299f7fa639bf5d573d49548fed3": {
+      "active": false,
+      "approved": true,
+      "created_at": "2026-01-16T03:59:13.823923+00:00",
+      "decision": {
+        "conditions": [
+          "aspect != Aspect::Stop",
+          "aspect != Aspect::Caution",
+          "aspect != Aspect::Clear"
+        ],
+        "expression": "aspect != Aspect::Stop && aspect != Aspect::Caution && aspect != Aspect::Clear",
+        "kind": "if",
+        "line": 22,
+        "required_pairs_estimate": 3
+      },
+      "kind": "mcdc",
+      "name": "mcdc_2",
+      "reviewed_at": "2026-01-16T04:52:50.468269+00:00",
+      "reviewed_by": "Mia",
+      "section_sha256": "42f6d9951590c2e4237a875bbbc470b45923e299f7fa639bf5d573d49548fed3",
+      "source_rel": "src/drivers/SignalHead.cpp",
+      "source_sha256": "bd4ad2d13c0e7df96b5ee074275773aecd624d551ad02c492814fe5c076ebd8e",
+      "test_file_rel": "tests/src/drivers/test_SignalHead.cpp"
+    },
+    "4e84ba0f1bb6b1b5aa52191cfef83261e5185b52fa28618eb49fc554b422200f": {
+      "active": true,
+      "approved": true,
+      "created_at": "2026-01-16T06:21:47.573563+00:00",
+      "decision": null,
+      "kind": "base",
+      "name": "base_1",
+      "reviewed_at": "2026-01-16T12:05:35.683151+00:00",
+      "reviewed_by": "Mia",
+      "section_sha256": "4e84ba0f1bb6b1b5aa52191cfef83261e5185b52fa28618eb49fc554b422200f",
+      "source_rel": "src/drivers/TrackCircuitInput.cpp",
+      "source_sha256": "6ff55728ec0af07478486a974cb7926478eb36bce960577400efc8946af3ff7d",
+      "test_file_rel": "tests/src/drivers/test_TrackCircuitInput.cpp"
+    },
+    "587c8ffdb3049d0d319f97d8de020baf52176001b6a4ef62cf9f3513b66856c9": {
+      "active": true,
+      "approved": true,
+      "created_at": "2026-01-14T11:27:36.415309+00:00",
+      "decision": null,
+      "kind": "base",
+      "name": "base_1",
+      "reviewed_at": "2026-01-14T11:33:33.897416+00:00",
+      "reviewed_by": "Mia",
+      "section_sha256": "587c8ffdb3049d0d319f97d8de020baf52176001b6a4ef62cf9f3513b66856c9",
+      "source_rel": "src/logic/Interlocking.cpp",
+      "source_sha256": "953f3bf73e1487b173132ca9a87f8ad4b7913ebc2227e2c6a2d882fd58c172d4",
+      "test_file_rel": "tests/src/logic/test_Interlocking.cpp"
+    },
+    "79da2073d0c88b0106872d6c6c942116d6f6e94ef4c2554b35b6cdb3c2cc48c6": {
+      "active": true,
+      "approved": true,
+      "created_at": "2026-01-16T03:59:13.823923+00:00",
+      "decision": {
+        "conditions": [
+          "aspect != Aspect::Stop",
+          "aspect != Aspect::Caution",
+          "aspect != Aspect::Clear"
+        ],
+        "expression": "aspect != Aspect::Stop && aspect != Aspect::Caution && aspect != Aspect::Clear",
+        "kind": "if",
+        "line": 22,
+        "required_pairs_estimate": 3
+      },
+      "kind": "mcdc",
+      "name": "mcdc_1",
+      "reviewed_at": "2026-01-16T05:05:12.889254+00:00",
+      "reviewed_by": "Mia",
+      "section_sha256": "79da2073d0c88b0106872d6c6c942116d6f6e94ef4c2554b35b6cdb3c2cc48c6",
+      "source_rel": "src/drivers/SignalHead.cpp",
+      "source_sha256": "bd4ad2d13c0e7df96b5ee074275773aecd624d551ad02c492814fe5c076ebd8e",
+      "test_file_rel": "tests/src/drivers/test_SignalHead.cpp"
+    },
+    "a9f6c01fa57f3e823f2f1a596a72fb00b131553098425d46b69fb490754da65c": {
+      "active": true,
+      "approved": false,
+      "created_at": "2026-01-16T20:22:03.559974+00:00",
+      "decision": null,
+      "kind": "base",
+      "name": "base_1",
+      "section_sha256": "a9f6c01fa57f3e823f2f1a596a72fb00b131553098425d46b69fb490754da65c",
+      "source_rel": "src/app/BlockController.cpp",
+      "source_sha256": "b54e070512fc0b6665912dca19e8824dda7617781ff4c1253c68acdee6f7d8d4",
+      "test_file_rel": "tests/src/app/test_BlockController.cpp"
+    }
+  },
+  "version": 1
+}

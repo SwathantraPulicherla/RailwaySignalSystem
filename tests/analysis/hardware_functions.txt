@@ -1,0 +1,8 @@
+REPO SCAN - HARDWARE-TOUCHING FUNCTIONS
+==================================================
+
+void ArduinoGpio::configure (from src\hal\ArduinoGpio.cpp)
+void ArduinoGpio::write (from src\hal\ArduinoGpio.cpp)
+void MockGpio::configure (from src\hal\MockGpio.cpp)
+void MockGpio::write (from src\hal\MockGpio.cpp)
+void MockGpio::setInputLevel (from src\hal\MockGpio.cpp)

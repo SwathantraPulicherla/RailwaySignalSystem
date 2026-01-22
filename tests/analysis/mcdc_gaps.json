@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "generated_at": "2026-01-16T20:21:14.142511+00:00",
+  "source_root": "C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/src",
+  "files": {
+    "src/app/main.cpp": [
+      {
+        "kind": "if",
+        "line": 119,
+        "expression": "d.aspect != lastAspect || d.reason != lastReason",
+        "conditions": [
+          "d.aspect != lastAspect",
+          "d.reason != lastReason"
+        ],
+        "required_pairs_estimate": 2
+      },
+      {
+        "kind": "switch",
+        "line": 14,
+        "expression": "a",
+        "conditions": [
+          "a"
+        ],
+        "required_pairs_estimate": 1
+      },
+      {
+        "kind": "switch",
+        "line": 26,
+        "expression": "r",
+        "conditions": [
+          "r"
+        ],
+        "required_pairs_estimate": 1
+      }
+    ],
+    "src/drivers/SignalHead.cpp": [
+      {
+        "kind": "if",
+        "line": 22,
+        "expression": "aspect != Aspect::Stop && aspect != Aspect::Caution && aspect != Aspect::Clear",
+        "conditions": [
+          "aspect != Aspect::Stop",
+          "aspect != Aspect::Caution",
+          "aspect != Aspect::Clear"
+        ],
+        "required_pairs_estimate": 3
+      },
+      {
+        "kind": "ternary",
+        "line": 16,
+        "expression": "cfg_.activeHigh",
+        "conditions": [
+          "cfg_.activeHigh"
+        ],
+        "required_pairs_estimate": 1
+      },
+      {
+        "kind": "ternary",
+        "line": 17,
+        "expression": "levelHigh",
+        "conditions": [
+          "levelHigh"
+        ],
+        "required_pairs_estimate": 1
+      }
+    ],
+    "src/drivers/TrackCircuitInput.cpp": [
+      {
+        "kind": "ternary",
+        "line": 23,
+        "expression": "cfg_.activeLow",
+        "conditions": [
+          "cfg_.activeLow"
+        ],
+        "required_pairs_estimate": 1
+      }
+    ],
+    "src/hal/ArduinoGpio.cpp": [
+      {
+        "kind": "switch",
+        "line": 11,
+        "expression": "mode",
+        "conditions": [
+          "mode"
+        ],
+        "required_pairs_estimate": 1
+      },
+      {
+        "kind": "ternary",
+        "line": 30,
+        "expression": "::digitalRead(static_cast<int>(pin)) == HIGH",
+        "conditions": [
+          "::digitalRead(static_cast<int>(pin)) == HIGH"
+        ],
+        "required_pairs_estimate": 1
+      },
+      {
+        "kind": "ternary",
+        "line": 39,
+        "expression": "level == PinLevel::High",
+        "conditions": [
+          "level == PinLevel::High"
+        ],
+        "required_pairs_estimate": 1
+      }
+    ]
+  }
+}

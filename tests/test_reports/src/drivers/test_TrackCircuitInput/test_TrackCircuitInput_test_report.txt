@@ -1,0 +1,156 @@
+============================================================
+GTEST CASE REPORT
+============================================================
+
+Run (UTC): 2026-01-16T19:35:12.056030+00:00
+Group: test_TrackCircuitInput__src__drivers
+Executable: test_TrackCircuitInput__src__drivers.exe
+
+Total cases: 22
+Passed: 18
+Failed: 4
+
+FAILED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow  |  C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:116
+Value of: circuit_->isOccupied()
+  Actual: true
+Expected: false
+FAILED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow  |  C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:106
+Value of: circuit_->isOccupied()
+  Actual: false
+Expected: true
+FAILED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs  |  C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:246
+Value of: circuit_->isHealthy()
+  Actual: true
+Expected: false
+FAILED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce  |  C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:267
+Value of: circuit_->isOccupied()
+  Actual: false
+Expected: true
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitConfiguresGpioCorrectly
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveLowAndPinHigh
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromClearToOccupied
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromOccupiedToClear
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForStuckLowFault
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateResetsStuckLowFaultWhenCircuitBecomesClear
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateSetsHealthyToFalseWhenStuckOccupiedBeyondThreshold
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroDebounceMsChangesStateImmediately
+PASSED: AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroStuckLowFaultMsGoesUnhealthyImmediatelyIfOccupied
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitConfiguresGpioAsInputPullup
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitSetsInitialClearStateBasedOnGpioReadAndActiveLowConfig
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowFalse_GpioHigh_ExpectOccupied
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowTrue_GpioHigh_ExpectClear
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromClearToOccupied
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromOccupiedToClear
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDetectsAndRecoversFromStuckLowFault
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDoesNotBecomeUnhealthyIfStuckLowClearsBeforeThreshold
+PASSED: AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateHandlesZeroTimeThresholds
+
+
+============================================================
+CTEST SUMMARY
+============================================================
+
+Return code: 8
+
+STATUS: COMPLETED
+
+--- STDOUT/STDERR ---
+Test project C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build
+    Start 2: test_TrackCircuitInput__src__drivers
+1/1 Test #2: test_TrackCircuitInput__src__drivers ...***Failed    0.28 sec
+Running main() from C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = AISEC_MCDC_*.*:AISEC_BASE_*.*
+[==========] Running 22 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 13 tests from AISEC_BASE_TrackCircuitInputTest
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitConfiguresGpioCorrectly
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitConfiguresGpioCorrectly (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveLowAndPinHigh
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveLowAndPinHigh (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:106: Failure
+Value of: circuit_->isOccupied()
+  Actual: false
+Expected: true
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:116: Failure
+Value of: circuit_->isOccupied()
+  Actual: true
+Expected: false
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromClearToOccupied
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromClearToOccupied (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromOccupiedToClear
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateDebouncesStateChangeFromOccupiedToClear (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateSetsHealthyToFalseWhenStuckOccupiedBeyondThreshold
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateSetsHealthyToFalseWhenStuckOccupiedBeyondThreshold (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateResetsStuckLowFaultWhenCircuitBecomesClear
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateResetsStuckLowFaultWhenCircuitBecomesClear (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroDebounceMsChangesStateImmediately
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroDebounceMsChangesStateImmediately (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroStuckLowFaultMsGoesUnhealthyImmediatelyIfOccupied
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateWithZeroStuckLowFaultMsGoesUnhealthyImmediatelyIfOccupied (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:246: Failure
+Value of: circuit_->isHealthy()
+  Actual: true
+Expected: false
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce
+C:/Users/SwathantraPulicherla/workspaces/UnitTestGen/RailwaySignalSystem/tests/src/drivers/test_TrackCircuitInput.cpp:267: Failure
+Value of: circuit_->isOccupied()
+  Actual: false
+Expected: true
+
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce (0 ms)
+[ RUN      ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForStuckLowFault
+[       OK ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForStuckLowFault (0 ms)
+[----------] 13 tests from AISEC_BASE_TrackCircuitInputTest (0 ms total)
+
+[----------] 9 tests from AISEC_MCDC_TrackCircuitInputTest_Decision_1
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitConfiguresGpioAsInputPullup
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitConfiguresGpioAsInputPullup (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitSetsInitialClearStateBasedOnGpioReadAndActiveLowConfig
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_InitSetsInitialClearStateBasedOnGpioReadAndActiveLowConfig (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromClearToOccupied
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromClearToOccupied (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromOccupiedToClear
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDebouncesStateChangeFromOccupiedToClear (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDetectsAndRecoversFromStuckLowFault
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDetectsAndRecoversFromStuckLowFault (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDoesNotBecomeUnhealthyIfStuckLowClearsBeforeThreshold
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateDoesNotBecomeUnhealthyIfStuckLowClearsBeforeThreshold (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateHandlesZeroTimeThresholds
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_UpdateHandlesZeroTimeThresholds (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowTrue_GpioHigh_ExpectClear
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowTrue_GpioHigh_ExpectClear (0 ms)
+[ RUN      ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowFalse_GpioHigh_ExpectOccupied
+[       OK ] AISEC_MCDC_TrackCircuitInputTest_Decision_1.AISEC_MCDC_McDc_ReadRawClear_ActiveLowFalse_GpioHigh_ExpectOccupied (0 ms)
+[----------] 9 tests from AISEC_MCDC_TrackCircuitInputTest_Decision_1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 22 tests from 2 test suites ran. (1 ms total)
+[  PASSED  ] 18 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsOccupiedWhenActiveLowAndPinLow
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_InitSetsInitialStateAsClearWhenActiveHighAndPinLow
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesInitialOccupiedStateWithZeroStuckLowFaultMs
+[  FAILED  ] AISEC_BASE_TrackCircuitInputTest.AISEC_BASE_UpdateHandlesTimeWrapAroundForDebounce
+
+ 4 FAILED TESTS
+libgcov profiling error:C:\Users\SwathantraPulicherla\workspaces\UnitTestGen\RailwaySignalSystem\tests\build\tests/CMakeFiles/test_TrackCircuitInput__src__drivers.dir/src/drivers/test_TrackCircuitInput.cpp.gcda:overwriting an existing profile data with a different checksum
+
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.30 sec
+
+The following tests FAILED:
+	  2 - test_TrackCircuitInput__src__drivers (Failed)
+
+--- STDERR ---
+Errors while running CTest

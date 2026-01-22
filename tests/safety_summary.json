@@ -1,4 +1,26 @@
 {
+<<<<<<< HEAD
   "safety_level": "SIL3",
   "mcdc_analysis_performed": false
+=======
+  "safety_level": "QM",
+  "mcdc_analysis_performed": true,
+  "human_approvals_complete": false,
+  "base_tests_generated": true,
+  "coverage_status": {
+    "statement": "FAIL",
+    "branch": "FAIL",
+    "mcdc": "INCOMPLETE"
+  },
+  "coverage": {
+    "statement_pct": 16.7,
+    "branch_pct": 6.4,
+    "targets": {
+      "statement": 70,
+      "branch": 50
+    }
+  },
+  "mcdc_gaps_remaining": 10,
+  "mcdc_tests_generated": true
+>>>>>>> 1bb9553adad21f283406387bc632c972cb6f71b6
 }
